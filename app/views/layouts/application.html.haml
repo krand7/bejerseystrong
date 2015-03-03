@@ -1,0 +1,15 @@
+!!!
+%html
+	%head
+		%title Be Jersey Strong
+		= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true 
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true 
+		= csrf_meta_tags 
+%body
+	= render partial: 'layouts/navigation_top'
+	#container-main.container-fluid{ style: 'margin: 0; padding: 0;' }
+		#container-left
+			= render partial: 'layouts/navigation_left'
+		#container-right
+			= yield
+	= render partial: 'layouts/footer'

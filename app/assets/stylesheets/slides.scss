@@ -1,0 +1,20 @@
+#slide1, #slide2, #slide3, #slide4, #slide5, #slide6 {
+	height: 100vh;
+}
+
+#slide1 {
+	background-image: asset-url('img/military-family-2.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
+#slide2, #slide3, #slide4, #slide5 {
+	background-image: asset-url('img/pw_maze_white.png');
+	background-repeat: repeat;
+}
+
+#slide6 {
+	background-image: asset-url('img/unsplash-assorted.jpeg');
+	background-size: cover;
+
+}

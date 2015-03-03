@@ -1,0 +1,15 @@
+/* Fonts */
+@font-face { 
+	font-family: HelveticaRounded; 
+	src: asset-url('fonts/HelveticaRounded/HelveticaRounded-Bold.otf');
+} 
+
+body {
+	font-family: HelveticaRounded, Arial, sans-serif;
+}
+
+.f300 { font-weight: 300; }
+.f400 { font-weight: 400; }
+.f500 { font-weight: 500; }
+.f600 { font-weight: 600; }
+.f700 { font-weight: 700; }

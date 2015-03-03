@@ -1,0 +1,98 @@
+html, body {
+  background-color: transparent;
+}
+
+.reset-layout {
+  margin: 0px;
+  padding: 0px;
+}
+.centered { text-align: center; }
+.righted { text-align: right; }
+.lefted { text-align: left; }
+
+/* Header
+******************/
+.navbar {
+  margin-bottom:0px;
+}
+#navbar-brand {
+  display: block;
+  width:80%;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+}
+.navbar-toggle {
+  float: left;
+  margin-left:15px;
+}
+
+/* Main Content
+********************/
+#container-main {
+  position: relative;
+  background-color: #eee;
+}
+#container-left {
+  background-color: #E66107;
+}
+#container-right {
+  background-color: white;
+}
+
+/* Footer
+******************/
+.footer {
+  background-color: #777;
+  color: transparentize(white, .2);
+}
+
+/* Responsive Components
+************************/
+@media all and (max-width: $screen-xs-max) {
+  #container-left {
+    margin-left: -100%;
+    float: left;
+  }
+  #container-left.active-nav {
+    margin-left: 0px;
+    width:80%;
+  }
+  #container-right {
+    margin-left: 0px;
+    float: left;
+    width: 100%;
+  }
+  #container-right.active-nav {
+    margin-right:-90%;
+    float: right;
+  }
+}
+
+@media all and (min-width: $screen-sm-min) {
+  #container-left {
+    margin-left: -100%;
+    float: left;
+  }
+  #container-left.active-nav {
+    margin-left: 0px;
+    width:60%;
+  }
+  #container-right {
+    margin-left: 0px;
+    float: left;
+    width: 100%;
+  }
+  #container-right.active-nav {
+    margin-right:-70%;
+    float: right;
+  }
+}
+
+@media all and (min-width: $screen-md-min) {
+
+}
+
+@media all and (min-width: $screen-lg-min) {
+
+}
