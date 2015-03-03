@@ -1,0 +1,28 @@
+#emailForm {
+	margin-top: 80px;
+	background-color: rgba(255,255,255,.9);
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.social-share-icons {
+	border: 3px solid transparent;
+	border-radius: 20px;
+	filter: grayscale(100%);
+}
+
+.social-share-icons:hover {
+	border-color: white;
+	background-color: white;
+	filter: grayscale(10%);
+}
+
+.social-share-icons:active{
+	filter: grayscale(0%);
+}
+
+// vimeo color: 2AB8E8
+// facebook color: 3B5998
+// twitter color: 1DB1EB
+// linkedin color: 1078B3
+// google+ color: DD4B39

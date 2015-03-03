@@ -60,8 +60,9 @@
             Juan Carlos and his family had moved to New Jersey from El Salvador four years ago. His family, including his young son, had been blessed with good health. He owned a business and had looked into getting health insurance in the past. English wasn’t his first language, however, and navigating the health care marketplace was complicated. As a result, he and his family were without insurance when they were rear-ended by an SUV on the Turnpike. The hospital staff nursed them back to full health but Juan Carlos wakes up every morning worried about making ends meet because of mounting medical bills. 
 #slide3.row.reset-layout
   = render partial: 'people_display'
-  %h1.centered
-    In October, one thousand university students will convene across New Jersey in a grassroots movement to inform the state's citizens about their health care options.
+  .col-sm-10.col-sm-offset-1
+    %h1.centered
+      In September 2015, 1,000 college students will form a grassroots movement to help New Jerseyans learn about their health insurance options.
   = link_to '#slide3' do
     .col-sm-2.col-sm-offset-1.centered.inner-slide-navigation
       %h3.f300 See Why
@@ -73,48 +74,30 @@
       %h3.f300 See When
 
 #slide4.row.reset-layout
-
-#slide5.row.reset-layout
   .col-sm-4
-    = image_tag 'img/logo-color.png', style: 'height:100px;', class: 'img-responsive'
-    %p One city
-    %p Two city
-    %p Red city
-    %p Blue city
+    = image_tag 'img/logo-color.png', style: 'height:100px;'
+    %p.lead{ style: 'margin-left: 40px;'}
+      Be Jersey Strong will work with regional coordinators to identify and train campus captains and volunteers at each two- and four-year college in New Jersey. 
+    %p.lead{ style: 'margin-left: 40px;'}
+      Campus captains and volunteers will then speak at churches, community centers, clinics, and local events to connect individuals to the information and resources they need to make a well-informed decision about their health insurance options. 
+    %p.lead{ style: 'margin-left: 40px;'}
+      Together, they will aim to mobilize over 1,000 volunteers and have over 100,000 conversations with their fellow New Jerseyans. 
+
   .col-sm-8
     = image_tag 'img/jerseystrong_map_transparent.png', id: 'jerseystrong-map', class: 'img-responsive'
 
-#slide6.row.reset-layout
-  #emailForm.col-md-5.col-md-offset-1
-    #email-list-signup
-      %h1.centered-text Stay Up-to-date
-      %p.lead.centered-text Join our mailing list to hear the most exciting updates and news about our progress!
-      %form{:method => "post"}
-        .form-group
-          %label{:for => "email"} Email Address:
-          %input.form-control{:name => "email", :type => "email" }
-        %input#submit.btn.btn-primary.btn-lg{:name => "submit", :type => "submit" }
-    #social-links
-      %h2.centered-text Also, be sure to follow us!
-      %button.btn.btn-default.btn-lg{:style => "background-color:rgba(255,255,255,.1);", :type => "button"}
-        = image_tag 'icons/appbar.social.facebook.heart.png'
-      %button.btn.btn-default.btn-lg{:style => "background-color:rgba(255,255,255,.1);", :type => "button"}
-        = image_tag 'icons/appbar.social.twitter.png'
-      %button.btn.btn-default.btn-lg{:style => "background-color:rgba(255,255,255,.1);", :type => "button"}
-        = image_tag 'icons/appbar.social.linkedin.png'
-      %button.btn.btn-default.btn-lg{:style => "background-color:rgba(255,255,255,.1);", :type => "button"}
-        = image_tag 'icons/appbar.social.vimeo.png'
-  / END COL6
-  #emailForm.col-md-5.col-md-offset-1
-    %h1.centered-text Contact Us
-    %p.lead.centered-text Please get in touch, we'll get back to you as soon as we can!
+#slide5.row.reset-layout
+  #emailForm.col-sm-8.col-sm-offset-2
+    %h1.centered Stay Up-to-date
+    %p.lead.centered Join our mailing list to hear the most exciting updates and news about our progress!
     %form{:method => "post"}
-      .form-group
-        %input.form-control{:name => "name", :placeholder => "Your Name", :type => "text"}
-      .form-group
-        %input.form-control{:name => "email", :placeholder => "Email", :type => "email" }
-      .form-group
-        %input.form-control{:name => "subject", :placeholder => "Subject", :type => "text" }
-      .form-group
-        %textarea.form-control{:name => "comment", :placeholder => "Text"}
-      %input#submit.btn.btn-primary.btn-lg{:name => "submit", :type => "submit", :value => "Send"}
+      .form-group.centered
+        %label{:for => "email"} Email Address:
+        %input.form-control{:name => "email", :type => "email" }
+      %input.btn.btn-primary.btn-lg{:name => "submit", :type => "submit", style: 'display: block; margin: 0px auto;' }
+    #social-links.centered
+      %h2.centered Also, be sure to follow us!
+      = image_tag 'icons/appbar.social.facebook.heart.png', class: 'social-share-icons'
+      = image_tag 'icons/appbar.social.twitter.png', class: 'social-share-icons'
+      = image_tag 'icons/appbar.social.linkedin.png', class: 'social-share-icons'
+      = image_tag 'icons/appbar.social.vimeo.png', class: 'social-share-icons'

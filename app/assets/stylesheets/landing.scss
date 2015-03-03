@@ -13,12 +13,12 @@
 		background-color: transparent;
 		img {
 			filter: grayscale(100%);
-			border: 2px solid white;
+			border: 2px solid #efefef;
 			border-radius: 50%;
 		}
 		img:hover {
 			filter: grayscale(50%);
-			background-color: #ddd;
+			background-color: white;
 		}
 		img.active {
 			filter: grayscale(0%);
@@ -27,14 +27,7 @@
 	}
 	.carousel-inner {
 		height: 100%;
-		background: #feefec; /* Old browsers */
-		background: -moz-linear-gradient(45deg,  #feefec 0%, #fbf7f8 67%, #fbf7f8 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#feefec), color-stop(67%,#fbf7f8), color-stop(100%,#fbf7f8)); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(45deg,  #feefec 0%,#fbf7f8 67%,#fbf7f8 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(45deg,  #feefec 0%,#fbf7f8 67%,#fbf7f8 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(45deg,  #feefec 0%,#fbf7f8 67%,#fbf7f8 100%); /* IE10+ */
-		background: linear-gradient(45deg,  #feefec 0%,#fbf7f8 67%,#fbf7f8 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feefec', endColorstr='#fbf7f8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		background-color:white;
 		.item {
 			height: 100%;
 			width: 100%;
