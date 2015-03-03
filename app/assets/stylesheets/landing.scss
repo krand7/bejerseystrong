@@ -4,6 +4,8 @@
 }
 
 #carousel-testimonial {
+	border-top: 5px solid lighten($primary-red, 20);
+	border-bottom: 5px solid lighten($primary-blue, 20);
 	height: 50vh;
 	width: 100%;
 	// background-color: white;
