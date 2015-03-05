@@ -1,103 +1,11 @@
 #slide1.row.reset-layout
-  .col-sm-6.col-sm-offset-3
-    = image_tag 'img/logo-color.png', class: 'img img-responsive'
-  .col-sm-10.col-sm-offset-1.centered
-    %h3
-      “You may not appreciate the presence of good health, but you will definitely regret the absence of good health, because
-      %span.primary-red 
-        health is happiness
-    %p.primary-blue
-      \- Amit Kalantari
+  = render partial: 'slide1'
 #slide2.row.reset-layout
-  #container-problem
-    .row.reset-layout
-      .col-md-10.col-md-offset-1
-        %h1.centered
-          Far too often, people find that they lack health care
-          %span.primary-red just when they need it.
-      .col-sm-4
-        .thumbnail
-          .caption
-            %h4.centered
-              %span.primary-blue Over 250,000
-              New Jerseyans are uninsured
-      .col-sm-4
-        .thumbnail
-          .caption
-            %h4.centered
-              The majority of them want insurance, but 
-              %span.primary-blue over 50% 
-              feel overwhelmed by the process
-      .col-sm-4
-        .thumbnail
-          .caption
-            %h4.centered
-              Knowing that low-cost plans, financial support, and in-person help are available 
-              %span.primary-blue can mean the difference 
-              between enrolling and not enrolling
-  #carousel-testimonial.carousel.slide{"data-ride" => "carousel"}
-    / Indicators
-    %ol.carousel-indicators
-      -# %li.active{"data-slide-to" => "0", "data-target" => "#carousel-testimonial"}
-      -# %li{"data-slide-to" => "1", "data-target" => "#carousel-testimonial"}
-      = image_tag 'icons/person.normal.red.png', style: "height:30px; width: 30px; ", data: { "slide-to" => "0", target: "#carousel-testimonial"}, class: 'active'
-      = image_tag 'icons/person.excited.blue.png', style: "height:30px; width: 30px; ", data: { "slide-to" => "1", target: "#carousel-testimonial"}
-      = image_tag 'icons/person.normal.red.png', style: "height:30px; width: 30px; ", data: { "slide-to" => "2", target: "#carousel-testimonial"}
-
-    / Wrapper for slides
-    .carousel-inner{:role => "listbox"}
-      #testimonial1.item.active
-        .col-sm-8{ style: 'height: 100%; padding: 20px 80px;'}
-          %p.lead.centered
-            With the exception of a routine physical here and there, Laura had rarely needed medical care. She had aged off her parents’ insurance after her 25th birthday and was between jobs when she took a bad fall playing ultimate frisbee. She had broken a rib and collapsed a lung. The doctors in the ER were able to fix her rib and          re-expand her lung with ease, but she left the hospital with debt that will burden her for the better part of a decade.
-      .item
-        .col-sm-10.col-sm-offset-1{ style: 'height: 100%; padding: 20px 50px;'}
-          %p.lead.centered
-            Whether a young adult or a new American, living without health insurance means that every day is a gamble. Catastrophic medical expenses and bankruptcy are always just an injury or accident away. Most uninsured individuals know this. They know how precarious it is to be uninsured and want health insurance. They are, however, simply overwhelmed by the health care marketplace. What they need are helping hands and one-on-one conversations to help them make a well-informed decision about their health insurance options.  
-      #testimonial2.item
-        .col-sm-8.col-sm-offset-4{ style: 'height: 100%; padding: 20px 80px;'}
-          %p.lead.centered
-            Juan Carlos and his family had moved to New Jersey from El Salvador four years ago. His family, including his young son, had been blessed with good health. He owned a business and had looked into getting health insurance in the past. English wasn’t his first language, however, and navigating the health care marketplace was complicated. As a result, he and his family were without insurance when they were rear-ended by an SUV on the Turnpike. The hospital staff nursed them back to full health but Juan Carlos wakes up every morning worried about making ends meet because of mounting medical bills. 
+  = render partial: 'slide2'
 #slide3.row.reset-layout
   = render partial: 'people_display'
-  .col-sm-10.col-sm-offset-1
-    %h1.centered
-      In September 2015, 1,000 college students will form a grassroots movement to help New Jerseyans learn about their health insurance options.
-  = link_to '#slide3' do
-    .col-sm-2.col-sm-offset-1.centered.inner-slide-navigation
-      %h3.f300 See Why
-  = link_to '#slide3' do
-    .col-sm-2.col-sm-offset-2.centered.inner-slide-navigation
-      %h3.f300 See Where
-  = link_to '#slide3' do
-    .col-sm-2.col-sm-offset-2.centered.inner-slide-navigation
-      %h3.f300 See When
-
+  = render partial: 'slide3'
 #slide4.row.reset-layout
-  .col-sm-4
-    = image_tag 'img/logo-color.png', style: 'height:100px;'
-    %p.lead{ style: 'margin-left: 40px;'}
-      Be Jersey Strong will work with regional coordinators to identify and train campus captains and volunteers at each two- and four-year college in New Jersey. 
-    %p.lead{ style: 'margin-left: 40px;'}
-      Campus captains and volunteers will then speak at churches, community centers, clinics, and local events to connect individuals to the information and resources they need to make a well-informed decision about their health insurance options. 
-    %p.lead{ style: 'margin-left: 40px;'}
-      Together, they will aim to mobilize over 1,000 volunteers and have over 100,000 conversations with their fellow New Jerseyans. 
-
-  .col-sm-8
-    = image_tag 'img/jerseystrong_map_transparent.png', id: 'jerseystrong-map', class: 'img-responsive'
-
+  = render partial: 'slide4'
 #slide5.row.reset-layout
-  #emailForm.col-sm-8.col-sm-offset-2
-    %h1.centered Stay Up-to-date
-    %p.lead.centered Join our mailing list to hear the most exciting updates and news about our progress!
-    %form{:method => "post"}
-      .form-group.centered
-        %label{:for => "email"} Email Address:
-        %input.form-control{:name => "email", :type => "email" }
-      %input.btn.btn-primary.btn-lg{:name => "submit", :type => "submit", style: 'display: block; margin: 0px auto;' }
-    #social-links.centered
-      %h2.centered Also, be sure to follow us!
-      = image_tag 'icons/appbar.social.facebook.heart.png', class: 'social-share-icons'
-      = image_tag 'icons/appbar.social.twitter.png', class: 'social-share-icons'
-      = image_tag 'icons/appbar.social.linkedin.png', class: 'social-share-icons'
-      = image_tag 'icons/appbar.social.vimeo.png', class: 'social-share-icons'
+  = render partial: 'slide5'

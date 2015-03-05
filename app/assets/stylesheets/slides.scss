@@ -8,13 +8,17 @@
 	background-position: center center;
 }
 
-#slide2, #slide3, #slide4 {
+#slide2 {
+	background-color: rgba(204, 243, 255, .5);
+}
+
+#slide3, #slide4 {
 	background-image: asset-url('img/pw_maze_white_faded.png');
 	background-repeat: repeat;
 }
 
 #slide5 {
-	background-image: asset-url('img/unsplash-assorted.jpeg');
+	background-image: asset-url('cover/unsplash-assorted.jpeg');
 	background-size: cover;
 
 }

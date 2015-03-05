@@ -1,12 +1,5 @@
-#container-problem {
-	height: 50vh;
-	padding: 40px;
-}
-
 #carousel-testimonial {
-	border-top: 5px solid lighten($primary-red, 20);
-	border-bottom: 5px solid lighten($primary-blue, 20);
-	height: 50vh;
+	height: 400px;
 	width: 100%;
 	// background-color: white;
 	.carousel-indicators  {
@@ -31,19 +24,20 @@
 		.item {
 			height: 100%;
 			width: 100%;
-			color: rgba(0,0,0,.7);
+			color: blue;
+			color: transparentize($primary-blue, 0.3);
 		}
 		#testimonial1 {
-			background-image: asset-url('img/testimonial_1_bcg.png');
+			background-image: asset-url('cover/unsplash_testimonial_4.jpeg');
 			background-repeat: no-repeat;
-			background-position: right bottom;
-			background-size: auto 100%;
+			background-position: center;
+			background-size: 100% auto;
 		}
 		#testimonial2 {
-			background-image: asset-url('img/testimonial_2_bcg.png');
+			background-image: asset-url('cover/unsplash_testimonial_3.jpg');
 			background-repeat: no-repeat;
-			background-position: left bottom;
-			background-size: auto 100%;
+			background-position: center;
+			background-size: cover;
 		}
 	}
 }
