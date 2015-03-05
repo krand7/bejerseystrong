@@ -1,7 +1,12 @@
 %nav.navbar.navbar-default
-  %button.navbar-toggle{"data-object" => 'navbar-collapse', style: 'display: inline-block'}
-    %span.sr-only Toggle navigation
-    %span.icon-bar
-    %span.icon-bar
-    %span.icon-bar
-  %a#navbar-brand.navbar-brand{:href => "#"} Be Jersey Strong
+	%button.navbar-toggle{"data-object" => 'navbar-collapse', style: 'display: inline-block'}
+		%span.sr-only Toggle navigation
+		%span.icon-bar
+		%span.icon-bar
+		%span.icon-bar
+	.container
+		.brand
+			= image_tag 'img/logo-color.png', class: 'img-responsive', width: '200px', style: 'float:left;'
+		%ul.nav.navbar-nav
+			%li
+				%a{:href => "#"} Home

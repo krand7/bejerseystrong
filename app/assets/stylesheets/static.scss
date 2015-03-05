@@ -31,12 +31,19 @@ html, body {
 ********************/
 #container-main {
   position: relative;
-  background-color: #eee;
-  background-image: asset-url('img/pw_maze_white_faded.png');
-  background-repeat: repeat;
+  background-color: #333;
 }
 #container-left {
   background-color: #333;
+  color: #ddd;
+  ul {
+    padding: 50px;
+    list-style-type: none;
+    li {
+      margin: 18px;
+      font-size:24px;
+    }
+  }
 }
 #container-right {
   background-color: white;
