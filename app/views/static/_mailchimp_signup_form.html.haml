@@ -1,13 +1,14 @@
 #mc_embed_signup.col-sm-8.col-sm-offset-2
+  = image_tag 'img/Be-Jersey-Strong-07.png', class: 'img-responsive', style: 'margin: auto; max-width: 150px;'
   %form#mc-embedded-subscribe-form.validate{:action => "//bejerseystrong.us10.list-manage.com/subscribe/post?u=bce4d8b236991c7f4dd1c8aeb&amp;id=6e727078de", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
     #mc_embed_signup_scroll
-      %h1.centered Stay up-to-date!
-      %p.lead.centered Join our mailing list to hear the most exciting updates and news about our progress!
+      %h1.f700.centered Are you in?
+      %p.lead.centered Join our mailing list to hear the most exciting updates and news about our progress! You will be the first to know when we are recruiting members, and receive essential information about our plan and movement.
       .mc-field-group
-        %label{:for => "mce-EMAIL"}
-          Email Address
-          %span.asterisk *
-        %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => ""}
+        -# %label{:for => "mce-EMAIL"}
+        -#   Email Address
+          -# %span.asterisk *
+        %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", placeholder: "Email address"}
       #mce-responses.clear
         #mce-error-response.response{:style => "display:none"}
         #mce-success-response.response{:style => "display:none"}
@@ -15,4 +16,4 @@
       %div{:style => "position: absolute; left: -5000px;"}
         %input{:name => "b_38785afd1bd70030c2e4553db_e097e6524b", :tabindex => "-1", :type => "text", :value => ""}
       .clear
-        %input#mc-embedded-subscribe.btn.btn-primary{:name => "subscribe", :type => "submit", :value => "Subscribe"}
+        %input#mc-embedded-subscribe.btn.btn-primary{:name => "subscribe", :type => "submit", :value => "Join"}
