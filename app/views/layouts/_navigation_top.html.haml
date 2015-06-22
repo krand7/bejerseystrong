@@ -1,7 +1,16 @@
 %nav.navbar.navbar-default
-  %button.navbar-toggle{"data-object" => 'navbar-collapse', style: 'display: inline-block'}
-    %span.sr-only Toggle navigation
-    %span.icon-bar
-    %span.icon-bar
-    %span.icon-bar
-  %a#navbar-brand.navbar-brand{:href => "#"} Be Jersey Strong
+	%button.navbar-toggle{"data-object" => 'navbar-collapse', style: 'display: inline-block'}
+		%span.sr-only Toggle navigation
+		%span.icon-bar
+		%span.icon-bar
+		%span.icon-bar
+	.container
+		.brand
+			= link_to root_path do
+				= image_tag 'img/Be-Jersey-Strong-05.png', class: 'img-responsive', width: '200px', style: 'float:left;'
+		%ul.nav.navbar-nav.pull-right
+			- if current_user
+				%li= link_to 'Profile', users_show_path(current_user)
+			- else
+				%li= link_to 'Sign In', new_user_session_path
+

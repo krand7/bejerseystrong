@@ -31,10 +31,19 @@ html, body {
 ********************/
 #container-main {
   position: relative;
-  background-color: #eee;
+  background-color: #333;
 }
 #container-left {
-  background-color: #E66107;
+  background-color: #333;
+  color: #ddd;
+  ul {
+    padding: 50px;
+    list-style-type: none;
+    li {
+      margin: 18px;
+      font-size:24px;
+    }
+  }
 }
 #container-right {
   background-color: white;
@@ -56,7 +65,7 @@ html, body {
   }
   #container-left.active-nav {
     margin-left: 0px;
-    width:80%;
+    width:90%;
   }
   #container-right {
     margin-left: 0px;
@@ -76,7 +85,7 @@ html, body {
   }
   #container-left.active-nav {
     margin-left: 0px;
-    width:60%;
+    width:70%;
   }
   #container-right {
     margin-left: 0px;

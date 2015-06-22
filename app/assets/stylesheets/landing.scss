@@ -1,3 +1,47 @@
+#carousel-testimonial {
+	height: 400px;
+	width: 100%;
+	// background-color: white;
+	.carousel-indicators  {
+		background-color: transparent;
+		img {
+			filter: grayscale(100%);
+			border: 2px solid #efefef;
+			border-radius: 50%;
+		}
+		img:hover {
+			filter: grayscale(50%);
+			background-color: white;
+		}
+		img.active {
+			filter: grayscale(0%);
+			background-color: white;
+		}
+	}
+	.carousel-inner {
+		height: 100%;
+		background-color:white;
+		.item {
+			height: 100%;
+			width: 100%;
+			color: blue;
+			color: transparentize($primary-blue, 0.3);
+		}
+		#testimonial1 {
+			background-image: asset-url('cover/unsplash_testimonial_4.jpeg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% auto;
+		}
+		#testimonial2 {
+			background-image: asset-url('cover/unsplash_testimonial_3.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+	}
+}
+
 .person img {
 	width: 8%;
 	position:relative;

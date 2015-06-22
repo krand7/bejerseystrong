@@ -1,0 +1,15 @@
+= render partial: 'mailchimp_signup_form'
+/ #emailForm.col-sm-8.col-sm-offset-2
+/   %h1.centered Stay Up-to-date
+/   %p.lead.centered Join our mailing list to hear the most exciting updates and news about our progress!
+/   %form{:method => "post"}
+/     .form-group.centered
+/       %label{:for => "email"} Email Address:
+/       %input.form-control{:name => "email", :type => "email" }
+/     %input.btn.btn-primary.btn-lg{:name => "submit", :type => "submit", style: 'display: block; margin: 0px auto;' }
+/   #social-links.centered
+/     %h2.centered Also, be sure to follow us!
+/     = image_tag 'icons/appbar.social.facebook.heart.png', class: 'social-share-icons'
+/     = image_tag 'icons/appbar.social.twitter.png', class: 'social-share-icons'
+/     = image_tag 'icons/appbar.social.linkedin.png', class: 'social-share-icons'
+/     = image_tag 'icons/appbar.social.vimeo.png', class: 'social-share-icons'
