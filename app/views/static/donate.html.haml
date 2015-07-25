@@ -1,0 +1,50 @@
+.row
+  .col-sm-6.col-sm-offset-3{ style: 'padding: 20px;' }
+    = image_tag 'img/Be-Jersey-Strong-05_cropped.png', class: 'img img-responsive'
+.row
+  .col-sm-6.col-sm-offset-3
+    .centered
+      %p.lead
+        At Be Jersey Strong, we are currently working to address the fact that
+        there are 300,000 New Jerseyans who are uninsured, yet eligible to obtain
+        insurance through the health insurance marketplace.  This fall, we will
+        mobilize college students all across New Jersey in a grassroots movement
+        to talk to friends, family, and neighbors about their options for
+        obtaining health insurance.
+      %p.lead
+        While we have an amazing team working diligently to accomplish this, we
+        rely on charitable donations that facilitate our daily operations.
+      .donate-button
+        %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+          %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}/
+          %input{:name => "hosted_button_id", :type => "hidden", :value => "3YQM6VDX4ZMVG"}/
+          %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", :type => "image"}/
+          %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", :width => "1"}/
+        %br
+      %p.lead
+        In the next year, we plan to:
+      %ol.lefted{ style: 'font-size: 18px;'}
+        %li{ style: 'margin-bottom: 10px'}
+          Recruit and train 51 campus captains across New Jersey's higher
+          education system
+        %li{ style: 'margin-bottom: 10px'}
+          Register 100 certified application counselors (CACs)
+        %li{ style: 'margin-bottom: 10px'}
+          Grant scholarships to students at two-year colleges that allow them
+          to implement custom action plans for their campuses
+        %li{ style: 'margin-bottom: 10px'}
+          Organize 1,000 student volunteers and train them in the intricacies
+          of healthcare registration
+        %li{ style: 'margin-bottom: 10px'}
+          Engage in a minimum of 100,000 one-on-one conversations across the
+          state of New Jersey
+.row.background-blue
+  .col-sm-6.col-sm-offset-3{ style: 'margin-top: 50px; margin-bottom: 50px;' }
+    .centered
+      %h2.f300.white
+        Are you ready to make a difference?
+      %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+        %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}/
+        %input{:name => "hosted_button_id", :type => "hidden", :value => "3YQM6VDX4ZMVG"}/
+        %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", :type => "image"}/
+        %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", :width => "1"}/

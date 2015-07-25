@@ -11,6 +11,8 @@
 		%ul.nav.navbar-nav.pull-right
 			- if current_user
 				-#%li= link_to 'Profile', users_show_path(current_user)
-				%li= link_to 'Dashboard', users_show_path(current_user)
+				%li
+					= link_to users_show_path(current_user) do
+						%span.glyphicon.glyphicon-home{ style: 'font-size: 18px'}
 			- else
 				%li= link_to 'Sign In', new_user_session_path

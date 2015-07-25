@@ -4,4 +4,7 @@ class StaticController < ApplicationController
 
   def team
   end
+
+  def donate
+  end
 end

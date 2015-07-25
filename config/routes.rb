@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope module: 'static' do
     get :home
     get :team
+    get :donate
   end
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
