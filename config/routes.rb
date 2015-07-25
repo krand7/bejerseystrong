@@ -1,20 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
-
   scope module: 'static' do
     get :home
+    get :team
   end
+
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  get 'users/index'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/show'
+  get 'users/destroy'
 
   root 'static#home'
 

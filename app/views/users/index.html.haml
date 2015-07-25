@@ -1,0 +1,6 @@
+.row
+  .col-sm-8.col-sm-offset-2
+    %h1.centered Users
+    %ul
+      - User.all.each do |user|
+        %li= user.email

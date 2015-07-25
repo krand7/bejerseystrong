@@ -10,6 +10,7 @@
 				= image_tag 'img/Be-Jersey-Strong-05.png', class: 'img-responsive', width: '200px', style: 'float:left;'
 		%ul.nav.navbar-nav.pull-right
 			- if current_user
-				%li= link_to 'Profile', users_show_path(current_user)
+				-#%li= link_to 'Profile', users_show_path(current_user)
+				%li= link_to 'Dashboard', users_show_path(current_user)
 			- else
 				%li= link_to 'Sign In', new_user_session_path
