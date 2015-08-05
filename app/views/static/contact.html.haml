@@ -1,0 +1,25 @@
+- if notice.present?
+  #notice
+    = notice
+
+.row.reset-layout#contact-page
+  %h1.centered Contact Us
+  .col-sm-6.col-sm-offset-3
+    .well{ style: 'background-color: #fcfcfc' }
+      = form_tag do |f|
+        .form-group
+          %label.control-label{ for: 'sender' }
+            Sender
+          = email_field_tag :sender, nil, class: 'form-control'
+        .form-group
+          %label.control-label{ for: 'subject' }
+            Subject
+          = text_field_tag :subject, nil, class: 'form-control'
+        .form-group
+          %label.control-label{ for: 'body' }
+            Body
+          = text_area_tag :body, nil, class: 'form-control'
+        %br
+        .form-group
+          = submit_tag 'Send Invitation', class: 'btn btn-primary'
+

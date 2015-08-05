@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     get :home
     get :team
     get :donate
+    get :contact
   end
+
+  post :contact, to: 'static#contact_submit'
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   get 'users/index'
