@@ -1,0 +1,13 @@
+.img-team {
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 2px 2px 5px #777;
+  margin: auto;
+  max-width: 250px
+}
+
+@media (max-width:1200px) {
+  .img-team {
+    max-width:150px;
+  }
+}

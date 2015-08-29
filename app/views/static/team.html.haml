@@ -1,78 +1,79 @@
-%h1.centered Our Team
-.row{ style: 'margin: 0px 20px;'}
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/aakash.jpg'
-    %p.centered
-      Aakash is a physician-in-training and a firm believer in ensuring that
-      individuals are able to make well-informed decisions about their health.
-      Born and raised in New Jersey, he benefited from the generosity of
-      neighbors, teachers, coaches, and mentors who gave him a helping hand when
-      he needed it most. He is excited to return to New Jersey and help Be
-      Jersey Strong give back to those who have already given him so much.
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/ellie.png'
-    %p.centered
-      Ellie is a social media and digital marketing strategist at Deep Focus.
-      She hopes to bring her social media savvy and youth-targeted advertising
-      experience to the Be Jersey Strong team to help build a sound digital
-      communication strategy that will amplify the organization’s message and
-      inspire students to take action. Having previously worked as an EMT and
-      an ER technician, Ellie has always had a passion for healthcare, and is
-      truly thrilled to have the chance to apply her marketing knowledge to
-      helping others understand their healthcare options.
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/andy.jpg'
-    %p.centered
-      Andy is a physician-in-training who believes no one should have to make a
-      choice between feeding their families and receiving basic healthcare
-      simply because they are unsure of how to access it. Andy hopes to use his
-      experiences and expertise in medicine and management to help Be Jersey
-      Strong guide New Jerseyans through an often complicated health care system.
-.row{ style: 'margin: 0px 20px;'}
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/aakash.jpg'
-    %p.centered
-      Parimal is an attorney who was born and raised in New Jersey.  He supports
-      Be Jersey Strong because he believes that all New Jerseyans should be
-      equipped to understand their health care options so they can make the best
-      decisions for themselves and their families.  And he is passionate about
-      the idea that change is most effective when individuals come together to
-      make a difference in their own communities.
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/kyle.jpg'
-    %p.centered
-      Kyle is an engineer and developer born and raised in the Northeast. He is
-      currently based in Boston, working on a number of community-driven health
-      and research projects. For him, Be Jersey Strong is a unique opportunity
-      to directly help a large number of people get the health care that they
-      need and deserve. He's excited to bring his web savviness to the table in
-      order to make this happen as seamlessly as possible.
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/maureen.jpg'
-    %p.centered
-      Maureen is a development officer at WHYY/NPR in Philadelphia and teaches
-      grant writing at Rutgers University. She hopes to use her expertise in
-      nonprofit fundraising and development to help Be Jersey Strong achieve
-      its mission of connecting New Jersey residents to their health care
-      options. She believes that quality health care is a right of all people,
-      regardless of circumstance, and that no one should be denied care simply
-      because they are unsure of how to access it.
-.row{ style: 'margin: 0px 20px;'}
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/aakash.jpg'
-    %p.centered
-      Edward is a pre-medical student at Ursinus College.  As a student at a
-      liberal arts college, he is a firm believer in the importance in civic
-      involvement. Working with Be Jersey Strong represents a unique opportunity
-      for him to bring his interests in medicine and civic engagement together.
-      He looks forward to lending his experience with curriculum development and
-      student outreach to help Be Jersey Strong raise awareness of and access to
-      healthcare options.
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/shivani.jpg'
-    %p.centered
-      Shivani is simply swell
-  .col-sm-4
-    = render 'static/team_image', image_path: 'img/team/pranay.jpg'
-    %p.centered
-      Pranay is potentially powerful
+#jersey-city-container
+  #team-content-container
+    .row{ style: 'margin: 0px 20px;'}
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/aakash.jpg'
+        %h3.centered
+          Aakash Shah
+        %p.centered
+          Aakash is a physician-in-training and a firm believer in ensuring that individuals are able to
+          make well-informed decisions about their health. Born and raised in New Jersey, he
+          benefited from the generosity of neighbors, teachers, coaches, and mentors who gave him a
+          helping hand when he needed it most. He is excited to return to New Jersey and help Be
+          Jersey Strong give back to those who have already given him so much.
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/ellie.png'
+        %h3.centered
+          Ellie DiBerardino
+        %p.centered
+          Ellie is a social media and digital marketing strategist at Deep Focus. She hopes to bring her
+          social media savvy and youth-targeted advertising experience to the Be Jersey Strong team
+          to inspire students to take action. Having previously worked as an EMT and ER technician,
+          she knows firsthand the challenges faced by patients in need and is thrilled to apply her
+          marketing knowledge to help others understand their healthcare options.
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/andy.jpg'
+        %h3.centered
+          Andy Mak
+        %p.centered
+          Andy is a physician who believes no one should have to forgo health care simply because
+          they are unsure of how to access it. He hopes to use his experiences and expertise in
+          medicine and management to help Be Jersey Strong guide New Jerseyans through an often
+          complicated health care system.
+    .row{ style: 'margin: 0px 20px;'}
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/default-user.jpg'
+        %h3.centered
+          Parimal Garg
+        %p.centered
+          Parimal is an attorney who was born and raised in New Jersey. He is a firm believer that
+          change is most effective when individuals come together to make a difference in their own
+          communities. He supports Be Jersey Strong because he believes that all New Jerseyans
+          should be equipped to understand their health care options so they can make the best
+          decisions for themselves and their families.
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/kyle_rand.jpg'
+        %h3.centered
+          Kyle Rand
+        %p.centered
+          Kyle is an engineer and developer born and raised in the Northeast. He is
+          currently based in Boston, working on a number of community-driven health
+          and research projects. For him, Be Jersey Strong is a unique opportunity
+          to directly help a large number of people as they get the health care that
+          they need and deserve. He's excited to bring his web savviness to the table in
+          order to make this happen as seamlessly as possible.
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/default-user.jpg'
+        %h3.centered
+          Edward Lee
+        %p.centered
+          Edward is a pre-medical student at Ursinus College.  As a student at a
+          liberal arts college, he is a firm believer in the importance in civic
+          involvement. Working with Be Jersey Strong represents a unique opportunity
+          for him to bring his interests in medicine and civic engagement together.
+          He looks forward to lending his experience with curriculum development and
+          student outreach to help Be Jersey Strong raise awareness of and access to
+          healthcare options.
+    .row{ style: 'margin: 0px 20px;'}
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/shivani.jpg'
+        %h3.centered
+          Shivani Shah
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/pranay.jpg'
+        %h3.centered
+          Pranay Nadella
+      .col-sm-4
+        = render 'static/team_image', image_path: 'img/team/augustina.jpg'
+        %h3.centered
+          Augustina Mensa-Kwao

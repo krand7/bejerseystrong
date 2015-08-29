@@ -1,5 +1,5 @@
 %nav.navbar.navbar-default
-	%button.navbar-toggle{"data-object" => 'navbar-collapse', style: 'display: inline-block'}
+	%button.navbar-toggle.visible-xs{"data-object" => 'navbar-collapse', style: 'display: inline-block'}
 		%span.sr-only Toggle navigation
 		%span.icon-bar
 		%span.icon-bar
@@ -8,11 +8,20 @@
 		.brand
 			= link_to root_path do
 				= image_tag 'img/Be-Jersey-Strong-05.png', class: 'img-responsive', width: '200px', style: 'float:left;'
-		%ul.nav.navbar-nav.pull-right
-			- if current_user
-				-#%li= link_to 'Profile', users_show_path(current_user)
-				%li
-					= link_to users_show_path(current_user) do
-						%span.glyphicon.glyphicon-home{ style: 'font-size: 18px'}
-			- else
-				%li= link_to 'Sign In', new_user_session_path
+		%ul.nav.navbar-nav.hidden-xs
+			%li
+				= link_to 'Home', root_path
+			%li
+				= link_to 'Our Team', team_path
+			%li
+				= link_to 'Donate', donate_path
+			%li
+				= link_to 'Contact', contact_path
+/		%ul.nav.navbar-nav.pull-right
+/			- if current_user
+/				-#%li= link_to 'Profile', users_show_path(current_user)
+/				%li
+/					= link_to users_show_path(current_user) do
+/						%span.glyphicon.glyphicon-home{ style: 'font-size: 18px'}
+/			- else
+/				%li= link_to 'Sign In', new_user_session_path
