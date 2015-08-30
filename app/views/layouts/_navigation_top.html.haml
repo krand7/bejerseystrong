@@ -17,11 +17,13 @@
 				= link_to 'Donate', donate_path
 			%li
 				= link_to 'Contact', contact_path
-/		%ul.nav.navbar-nav.pull-right
-/			- if current_user
-/				-#%li= link_to 'Profile', users_show_path(current_user)
-/				%li
-/					= link_to users_show_path(current_user) do
-/						%span.glyphicon.glyphicon-home{ style: 'font-size: 18px'}
-/			- else
-/				%li= link_to 'Sign In', new_user_session_path
+		%ul.nav.navbar-nav.pull-right
+			- if current_user
+				%li
+					= link_to dashboard_path do
+						%span.glyphicon.glyphicon-home{ style: 'font-size: 18px'}
+				%li
+					= link_to destroy_user_session_path do
+						Logout
+			/ - else
+			/ 	%li= link_to 'Sign In', new_user_session_path

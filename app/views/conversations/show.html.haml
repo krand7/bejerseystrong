@@ -1,0 +1,20 @@
+%h1= "Conversation with #{@conversation.name}"
+
+%p.lead= "This conversation started on #{@conversation.created_at.strftime('%m/%d/%y')} at #{@conversation.created_at.strftime('%l:%M%P')}"
+
+%table.table.table-striped
+  %thead
+    %th First Name
+    %th Last Name
+    %th Email
+    %th Phone Number
+    %th Status
+  %tbody
+    %td= @conversation.first_name if @conversation.first_name.present?
+    %td= @conversation.last_name if @conversation.last_name.present?
+    %td= @conversation.email if @conversation.email.present?
+    %td= @conversation.phone_number if @conversation.phone_number.present?
+    %td= @conversation.state if @conversation.state.present?
+
+= link_to 'Edit', edit_conversation_path(@conversation), class: 'btn btn-default'
+= link_to 'Back', conversations_path, class: 'btn btn-default'

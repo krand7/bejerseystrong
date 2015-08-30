@@ -1,0 +1,15 @@
+%h1
+  Welcome
+  = succeed '!' do
+    = current_user.first_name.present? ? current_user.first_name : 'to your dashboard'
+
+%p.lead
+  You've had
+  = @conversations.count
+  conversations so far!
+  = link_to 'Add your recent conversations', conversations_path
+
+- if current_user.campus_captain?
+  %p.lead
+    Since you're a campus captain, you can add accounts for your campus volunteers.
+    = link_to 'Click here to add volunteers', new_volunteer_users_path
