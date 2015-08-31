@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :conversations
+
   scope module: 'static' do
     get :home
     get :team
@@ -10,11 +12,21 @@ Rails.application.routes.draw do
   post :contact, to: 'static#contact_submit'
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
-  get 'users/index'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/show'
-  get 'users/destroy'
+
+  resources :users do
+    collection do
+      get :new_volunteer
+      post :create_volunteer
+    end
+  end
+
+  resources :conversations do
+    member do
+      post :delete
+    end
+  end
+
+  get 'dashboard', to: 'dashboard#show'
 
   root 'static#home'
 

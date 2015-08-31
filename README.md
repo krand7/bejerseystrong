@@ -5,3 +5,16 @@
 <!-- [![Code Climate](https://codeclimate.com/github/sleepepi/bsrc/badges/gpa.svg)](https://codeclimate.com/github/sleepepi/bsrc) -->
 
 An organization to assist with healthcare conversions
+
+Process for establishing:
+
+1. Clone repository
+
+`git clone git@github.com:krand7/bejerseystrong.git`
+
+2. Check correct version of ruby and rails
+
+3. Install bundler and all gems
+
+`gem install bundler`
+`bundle install`

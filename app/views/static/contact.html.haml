@@ -1,25 +1,43 @@
-- if notice.present?
-  #notice
-    = notice
+#jersey-city-container
+  #contact-content-container
+    .row
+      .col-sm-10.col-sm-offset-1{ style: 'padding: 20px;' }
+        = image_tag 'img/Be-Jersey-Strong-05_cropped.png', class: 'img img-responsive'
+    .row
+      .col-sm-10.col-sm-offset-1
+        .centered
+          %p.lead
+            At Be Jersey Strong, we believe that every individual deserves to be
+            well-informed about his or her health care options.
+          %p.lead
+            = link_to 'mailto:kyle@bejerseystrong.org' do
+              If you have any questions, we'd love to hear them!
+  %br
+  %br
+  %br
+  %br
+/ - if notice.present?
+/   #notice
+/     = notice
 
-.row.reset-layout#contact-page
-  %h1.centered Contact Us
-  .col-sm-6.col-sm-offset-3
-    .well{ style: 'background-color: #fcfcfc' }
-      = form_tag do |f|
-        .form-group
-          %label.control-label{ for: 'sender' }
-            Sender
-          = email_field_tag :sender, nil, class: 'form-control'
-        .form-group
-          %label.control-label{ for: 'subject' }
-            Subject
-          = text_field_tag :subject, nil, class: 'form-control'
-        .form-group
-          %label.control-label{ for: 'body' }
-            Body
-          = text_area_tag :body, nil, class: 'form-control'
-        %br
-        .form-group
-          = submit_tag 'Send Invitation', class: 'btn btn-primary'
+/ .row.reset-layout#contact-page
+/   %h1.centered Contact Us
+/   .col-sm-6.col-sm-offset-3
+/     .well{ style: 'background-color: #fcfcfc' }
+/       = form_tag do |f|
+/         .form-group
+/           %label.control-label{ for: 'sender' }
+/             Sender
+/           = email_field_tag :sender, nil, class: 'form-control'
+/         .form-group
+/           %label.control-label{ for: 'subject' }
+/             Subject
+/           = text_field_tag :subject, nil, class: 'form-control'
+/         .form-group
+/           %label.control-label{ for: 'body' }
+/             Body
+/           = text_area_tag :body, nil, class: 'form-control'
+/         %br
+/         .form-group
+/           = submit_tag 'Send Invitation', class: 'btn btn-primary'
 
