@@ -23,7 +23,5 @@
 					= link_to dashboard_path do
 						%span.glyphicon.glyphicon-home{ style: 'font-size: 18px'}
 				%li
-					= link_to destroy_user_session_path do
+					= link_to destroy_user_session_path, method: :delete do
 						Logout
-			/ - else
-			/ 	%li= link_to 'Sign In', new_user_session_path

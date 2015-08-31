@@ -20,6 +20,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :conversations do
+    member do
+      post :delete
+    end
+  end
+
   get 'dashboard', to: 'dashboard#show'
 
   root 'static#home'

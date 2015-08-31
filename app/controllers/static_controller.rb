@@ -1,4 +1,7 @@
 class StaticController < ApplicationController
+
+  layout 'application_fullscreen'
+
   def home
   end
 

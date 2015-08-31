@@ -2,6 +2,9 @@ class Conversation < ActiveRecord::Base
 
   STATUS = [['Registered', 'registered'], ['Contacted', 'contacted'], ['Pending', 'pending']]
 
+  # Concerns
+  include Deletable
+
   # Model relationships
   belongs_to :user
 

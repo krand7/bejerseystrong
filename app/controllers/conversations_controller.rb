@@ -1,11 +1,16 @@
 class ConversationsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_conversation,    only: [:show, :delete]
 
   respond_to :html
 
   def index
-    @conversations = Conversation.all
+    if current_user.leadership?
+      @conversations = Conversation.current
+    else
+      @conversations = current_user.conversations.current
+    end
   end
 
   def new
@@ -15,7 +20,7 @@ class ConversationsController < ApplicationController
   def create
     @conversation = current_user.conversations.new(conversation_params)
     flash[:notice] = 'Conversation was successfully created.' if @conversation.save
-    respond_with(@conversation)
+    redirect_to conversations_path and return
   end
 
   def edit
@@ -25,13 +30,22 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find_by_id(params[:id])
   end
 
   def destroy
+    raise StandardError
+  end
+
+  def delete
+    @conversation.update(deleted: true)
+    redirect_to conversations_path and return
   end
 
   private
+
+    def set_conversation
+      @conversation = Conversation.find_by_id(params[:id])
+    end
 
     def conversation_params
         params.require(:conversation).permit(:first_name, :last_name, :email, :phone_number, :state)
