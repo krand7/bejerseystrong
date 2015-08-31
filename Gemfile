@@ -26,13 +26,12 @@ gem 'turbolinks'
 # Testing
 group :test do
   # Pretty printed test output
-  gem 'minitest'
-  gem 'minitest-reporters'
+  # gem 'minitest'
+  # gem 'minitest-reporters'
   gem 'simplecov',          '~> 0.9.1',           require: false
 end
 
-group :development, :test do
-  gem 'byebug'
+group :development do
   gem 'web-console', '~> 2.0'
 end
 
