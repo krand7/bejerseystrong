@@ -7,7 +7,7 @@ class VolunteersController < ApplicationController
   # GET /volunteers
   # GET /volunteers.json
   def index
-    @volunteers = Volunteer.all
+    @volunteers = Volunteer.current
   end
 
   # GET /volunteers/1
