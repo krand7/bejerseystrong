@@ -1,11 +1,9 @@
 <% if @volunteer.errors.present? %>
-  console.log("hello");
   <% error_explanation = "<ul class='primary-red'>" %>
   <% @volunteer.errors.full_messages.each do |message| %>
     <% error_explanation += "<li> #{message} </li>" %>
   <% end %>
   <% error_explanation += "</ul>" %>
-  console.log("<%= error_explanation %>");
   $("#error_explanation").html("<%= error_explanation.html_safe %>");
 <% else %>
   $("#volunteer-signup-form").html("<h3 class='centered primary-blue'>Thank you, we'll get in touch with you soon!</h3>");
