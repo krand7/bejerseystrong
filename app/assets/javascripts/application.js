@@ -15,6 +15,3 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
-//= require external/mc-validate
-//= require external/mc-initialize

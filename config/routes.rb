@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :volunteers
+
   resources :conversations
 
   scope module: 'static' do

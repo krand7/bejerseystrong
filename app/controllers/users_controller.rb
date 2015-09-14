@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :check_admin!
+  before_action :check_admin!, except: [:new_volunteer, :create_volunteer]
   before_action :check_campus_captain!, only: [:new_volunteer, :create_volunteer]
 
   respond_to :html

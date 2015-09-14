@@ -25,3 +25,6 @@
 				%li
 					= link_to destroy_user_session_path, method: :delete do
 						Logout
+			- else
+				%li
+					= link_to 'Volunteer Login', new_user_session_path

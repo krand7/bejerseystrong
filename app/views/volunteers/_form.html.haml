@@ -1,0 +1,23 @@
+= form_for(@volunteer) do |f|
+  - if @volunteer.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@volunteer.errors.count, "error")
+        prohibited this volunteer from being saved:
+      %ul
+        - @volunteer.errors.full_messages.each do |message|
+          %li= message
+  .form-group{ style: 'margin-right: 15px'}
+    = f.label :first_name, 'First Name', class: 'control-label'
+    = f.text_field :first_name, class: 'form-control'
+  .form-group{ style: 'margin-right: 15px'}
+    = f.label :last_name, 'Last Name', class: 'control-label'
+    = f.text_field :last_name, class: 'form-control'
+  .form-group{ style: 'margin-right: 15px'}
+    = f.label :email, 'Email', class: 'control-label'
+    = f.text_field :email, class: 'form-control'
+  .form-group{ style: 'margin-right: 15px'}
+    = f.label :zip_code, 'Zip Code', class: 'control-label'
+    = f.text_field :zip_code, class: 'form-control'
+  .form-group.centered{ style: 'margin-right: 15px'}
+    = f.submit 'Submit Volunteer', class: 'btn btn-primary', id: 'subscribe'

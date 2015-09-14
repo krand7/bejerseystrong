@@ -1,0 +1,24 @@
+- if notice
+  %p#notice= notice
+%h1 Interested Volunteers
+%table.table.table-striped
+  %thead
+    %tr
+      %th Email
+      %th First name
+      %th Last name
+      %th Zip code
+      %th Created at
+      %th{:colspan => "2"}
+  %tbody
+    - @volunteers.each do |volunteer|
+      %tr
+        %td= volunteer.email
+        %td= volunteer.first_name
+        %td= volunteer.last_name
+        %td= volunteer.zip_code
+        %td= volunteer.created_at.strftime("%m/%d/%Y")
+        %td= link_to 'Edit', edit_volunteer_path(volunteer), class: 'btn btn-default btn-sm'
+        %td= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+%br/
+= link_to 'New Volunteer', new_volunteer_path
