@@ -1,0 +1,53 @@
+= form_for @appointment, html: { class: 'form-horizontal' } do |f|
+  - if @appointment.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@appointment.errors.count, "error")
+        prohibited this appointment from being saved:
+      %ul
+        - @appointment.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.label :date, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.date_field :date, class: 'form-control'
+  .form-group
+    = f.label :start_time, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.time_field :start_time, class: 'form-control'
+  .form-group
+    = f.label :end_time, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.time_field :end_time, class: 'form-control'
+  .form-group
+    = f.label :user_id, 'Volunteer', class: 'control-label col-md-2'
+    .col-md-10
+      = f.select :user_id, User.where(school: current_user.school).collect{ |u| ["#{u.first_name} #{u.last_name} #{'(' + u.languages + ')' if u.languages.present?}", u.id]}, {}, class: 'form-control'
+  .form-group
+    = f.label :location, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :location, class: 'form-control'
+  .form-group
+    = f.label :address_line_one, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :address_line_one, class: 'form-control'
+  .form-group
+    = f.label :address_line_two, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :address_line_two, class: 'form-control'
+  .form-group
+    = f.label :zipcode, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :zipcode, class: 'form-control'
+  .form-group
+    = f.label :city, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :city, class: 'form-control'
+  - unless @appointment.new_record?
+    .form-group
+      = f.label :results, nil, class: 'control-label col-md-2'
+      .col-md-10
+        = f.text_area :results, class: 'form-control'
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit "#{@appointment.new_record? ? 'Create' : 'Save'} Appointment", class: 'btn btn-primary'

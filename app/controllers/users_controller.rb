@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :check_admin!, except: [:new_volunteer, :create_volunteer]
   before_action :check_campus_captain!, only: [:new_volunteer, :create_volunteer]
-
+  before_action :check_admin!, only: [:index, :new, :show, :destroy]
+  before_action :set_user, only: [:show, :destroy]
   respond_to :html
 
   def index
@@ -19,27 +19,46 @@ class UsersController < ApplicationController
 
   def create_volunteer
     @user = User.new(user_params)
-    flash[:notice] = 'User was successfully created.' if @user.save
-    respond_with(@user)
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to my_volunteers_users_path, notice: 'Your volunteer will receive an email shortly.' }
+      else
+        format.html { render :new_volunteer }
+      end
+    end
   end
 
-  def edit
+  def my_volunteers
+    @volunteers = User.where(school: current_user.school)
   end
 
   def update
+    respond_to do |format|
+      if current_user.update(user_params)
+        format.html { redirect_to profile_path, notice: 'Profile successfully saved!' }
+      else
+        format.html { render profile_path }
+      end
+    end
   end
 
   def show
-    @user = User.find_by_id(params[:id])
   end
 
   def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_path, notice: 'User was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
 
   private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :school, :language_one, :language_two, :language_three)
+  end
 
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :school)
-    end
-
+  def set_user
+    @user = User.find_by_id(params[:id])
+  end
 end

@@ -1,17 +1,20 @@
-@import 'bjs-variables';
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
-@import 'colors';
-@import 'fonts';
+@import "bjs-variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "colors";
+@import "fonts";
 
-@import 'slides';
-@import 'links';
-@import 'alerts';
+@import "slides";
+@import "links";
+@import "alerts";
+@import "content";
 
-@import 'static';
-@import 'landing';
-@import 'forms';
-@import 'contact';
-@import 'donate';
-@import 'team';
-@import 'users';
+@import "static";
+@import "landing";
+@import "forms";
+@import "contact";
+@import "donate";
+@import "team";
+@import "users";
+@import "dashboard";
+@import "appointments";

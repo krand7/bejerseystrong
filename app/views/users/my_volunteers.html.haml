@@ -1,27 +1,28 @@
 .content-header
   .container
-    %h1 Interested Volunteers
+    %h1 Campus Volunteers
+    %p= link_to 'Back to Dashboard', dashboard_path
 
 .container
   .content-container
     %table.table.table-striped
       %thead
         %tr
+          %th Name
           %th Email
-          %th First name
-          %th Last name
-          %th Zip code
-          %th Created at
+          %th Conversations
+          %th Appointments
+          %th Sessions
+          %th Created
           %th{:colspan => "2"}
       %tbody
         - @volunteers.each do |volunteer|
           %tr
+            %td= volunteer.name
             %td= volunteer.email
-            %td= volunteer.first_name
-            %td= volunteer.last_name
-            %td= volunteer.zip_code
+            %td= volunteer.conversations.count
+            %td= volunteer.appointments.count
+            %td= volunteer.sign_in_count
             %td= volunteer.created_at.strftime("%m/%d/%Y")
             %td= link_to 'Edit', edit_volunteer_path(volunteer), class: 'btn btn-default btn-sm'
             %td= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-    %br/
-    = link_to 'New Volunteer', new_volunteer_path

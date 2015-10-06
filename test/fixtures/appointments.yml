@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-10-04
+  start_time: 2015-10-04 11:00:00 EDT
+  end_time: 2015-10-04 12:00:00 EDT
+  deleted: false
+  created_by_id: 1
+  user: regular
+  location: MyString
+  address_line_one: MyString
+  address_line_two: MyString
+  zipcode: MyString
+  city: MyString
+  results: MyText

@@ -1,5 +1,8 @@
-%h1 New Volunteer
+.content-header
+  .container
+    %h1 New Volunteer
+    %p= link_to 'Back', volunteers_path
 
-= render 'form'
-
-= link_to 'Back', volunteers_path
+.container
+  .content-container
+    = render 'form'

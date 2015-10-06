@@ -3,9 +3,11 @@ require 'test_helper'
 class VolunteersControllerTest < ActionController::TestCase
   setup do
     @volunteer = volunteers(:one)
+    @admin = users(:admin)
   end
 
   test "should get index" do
+    login(@admin)
     get :index
     assert_response :success
     assert_not_nil assigns(:volunteers)
@@ -18,29 +20,33 @@ class VolunteersControllerTest < ActionController::TestCase
 
   test "should create volunteer" do
     assert_difference('Volunteer.count') do
-      post :create, volunteer: { email: @volunteer.email, first_name: @volunteer.first_name, last_name: @volunteer.last_name, zip_code: @volunteer.zip_code }
+      post :create, volunteer: { email: 'new@volunteer.com', first_name: 'New', last_name: 'Volunteer', zip_code: '11111' }
     end
 
     assert_redirected_to volunteer_path(assigns(:volunteer))
   end
 
   test "should show volunteer" do
+    login(@admin)
     get :show, id: @volunteer
     assert_response :success
   end
 
   test "should get edit" do
+    login(@admin)
     get :edit, id: @volunteer
     assert_response :success
   end
 
   test "should update volunteer" do
-    patch :update, id: @volunteer, volunteer: { email: @volunteer.email, first_name: @volunteer.first_name, last_name: @volunteer.last_name, zip_code: @volunteer.zip_code }
-    assert_redirected_to volunteer_path(assigns(:volunteer))
+    login(@admin)
+    patch :update, id: @volunteer, volunteer: { first_name: 'NewName' }
+    assert_redirected_to volunteers_path
   end
 
   test "should destroy volunteer" do
-    assert_difference('Volunteer.count', -1) do
+    login(@admin)
+    assert_difference('Volunteer.current.count', -1) do
       delete :destroy, id: @volunteer
     end
 

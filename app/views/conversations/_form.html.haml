@@ -1,4 +1,4 @@
-= form_for(@conversation) do |f|
+= form_for @conversation, html: { class: 'form-horizontal' } do |f|
   - if @conversation.errors.any?
     #error_explanation
       %h2
@@ -8,18 +8,25 @@
         - @conversation.errors.full_messages.each do |message|
           %li= message
   .form-group
-    = f.label :first_name, 'First name', class: 'control-label'
-    = f.text_field :first_name, class: 'form-control'
+    = f.label :first_name, 'First name', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :first_name, class: 'form-control'
   .form-group
-    = f.label :last_name, 'Last name', class: 'control-label'
-    = f.text_field :last_name, class: 'form-control'
+    = f.label :last_name, 'Last name', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :last_name, class: 'form-control'
   .form-group
-    = f.label :email, 'Email address', class: 'control-label'
-    = f.text_field :email, class: 'form-control'
+    = f.label :email, 'Email address', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :email, class: 'form-control'
   .form-group
-    = f.label :phone_number, 'Phone number', class: 'control-label'
-    = f.text_field :phone_number, class: 'form-control'
+    = f.label :phone_number, 'Phone number', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :phone_number, class: 'form-control'
   .form-group
-    = f.label :state, 'Status', class: 'control-label'
-    = f.select :state, [['---', nil]] + Conversation::STATUS, {}, class: 'form-control'
-  = f.submit 'Save Conversation', class: 'btn btn-primary'
+    = f.label :state, 'Status', class: 'control-label col-md-2'
+    .col-md-10
+      = f.select :state, Conversation::STATUS, {}, class: 'form-control'
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'

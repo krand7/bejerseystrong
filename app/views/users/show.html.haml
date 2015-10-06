@@ -1,14 +1,19 @@
-%h1 User Show
-%table.table.table-striped
-  %thead
-    %tr
-      %th #
-      %th First Name
-      %th Last Name
-      %th Email
-  %tbody
-    %tr
-      %td= @user.id
-      %td= @user.first_name if @user.first_name.present?
-      %td= @user.last_name if @user.last_name.present?
-      %td= @user.email
+.content-header
+  .container
+    %h1 User Show
+
+.container
+  .content-container
+    %table.table.table-striped
+      %thead
+        %tr
+          %th #
+          %th First Name
+          %th Last Name
+          %th Email
+      %tbody
+        %tr
+          %td= @user.id
+          %td= @user.first_name if @user.first_name.present?
+          %td= @user.last_name if @user.last_name.present?
+          %td= @user.email

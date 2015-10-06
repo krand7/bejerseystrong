@@ -1,15 +1,42 @@
-%h1
-  Welcome
-  = succeed '!' do
-    = current_user.first_name.present? ? current_user.first_name : 'to your dashboard'
+.content-header
+  .container
+    %h1
+      Welcome
+      = succeed '!' do
+        = current_user.first_name.present? ? current_user.first_name : 'to your dashboard'
 
-%p.lead
-  You've had
-  = @conversations.count
-  conversations so far!
-  = link_to 'Add your recent conversations', conversations_path
+- if current_user.languages.blank?
+  .dashboard-alert
+    .container
+      %h3
+        Looks like you haven't added your languages - please
+        = succeed '!' do
+          = link_to 'update your profile', profile_path
 
-- if current_user.campus_captain?
-  %p.lead
-    Since you're a campus captain, you can add accounts for your campus volunteers.
-    = link_to 'Click here to add volunteers', new_volunteer_users_path
+.container
+  .row
+    .col-sm-3.col-xs-4
+      .dashboard-icon
+        = link_to new_conversation_path do
+          = image_tag 'img/icons/conversations.png', class: 'img-responsive'
+      %p.lead
+        You've added
+        = current_user.conversations.count
+        conversations so far.
+    - if current_user.campus_captain?
+      .col-sm-3.col-xs-4
+        .dashboard-icon
+          = link_to new_volunteer_users_path do
+            = image_tag 'img/icons/volunteer.png', class: 'img-responsive'
+        %p.lead
+          Your campus has registered
+          = succeed '.' do
+            = pluralize(User.where(school: current_user.school).count, 'volunteer')
+      .col-sm-3.col-xs-4
+        .dashboard-icon
+          = link_to new_appointment_path do
+            = image_tag 'img/icons/appointment.png', class: 'img-responsive'
+        %p.lead
+          Your campus has
+          = pluralize(Appointment.where(created_by_id: current_user.id).where("date > ?", Date.current).count, 'appointment')
+          coming up.

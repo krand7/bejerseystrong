@@ -1,0 +1,8 @@
+.content-header
+  .container
+    %h1 My Appointments
+
+.container
+  .content-container
+    - @appointments.each do |appointment|
+      = render appointment

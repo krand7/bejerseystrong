@@ -1,21 +1,43 @@
-%h2 Sign up a new volunteer
-= form_for(@user, url: create_volunteer_users_path) do |f|
-  .form-group
-    = f.label :first_name, class: 'control-label'
-    = f.text_field :first_name, autofocus: true, class: 'form-control'
-  .form-group
-    = f.label :last_name, class: 'control-label'
-    = f.text_field :last_name, class: 'form-control'
-  .form-group
-    = f.label :email, class: 'control-label'
-    = f.email_field :email, class: 'form-control'
-  .form-group
-    = f.label :password, class: 'control-label'
-    = f.password_field :password, autocomplete: "off", class: 'form-control'
-  .form-group
-    = f.label :password_confirmation, class: 'control-label'
-    = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-  .form-group
-    = f.label :school, 'school', class: 'control-label'
-    = f.select :school, [['---', nil]] + User::SCHOOL, {}, class: 'form-control'
-  = f.submit "Add volunteer", class: 'btn btn-success'
+.content-header
+  .container
+    %h1 New Volunteer
+    %p= link_to 'Campus Volunteers', my_volunteers_users_path
+
+.container
+  .content-container
+    = form_for @user, url: create_volunteer_users_path, html: { class: 'form-horizontal' } do |f|
+      - if @user.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@user.errors.count, "error")
+            prohibited this volunteer from being saved:
+          %ul
+            - @user.errors.full_messages.each do |message|
+              %li= message
+      .form-group
+        = f.label :first_name, class: 'control-label col-md-2'
+        .col-md-10
+          = f.text_field :first_name, autofocus: true, class: 'form-control'
+      .form-group
+        = f.label :last_name, class: 'control-label col-md-2'
+        .col-md-10
+          = f.text_field :last_name, class: 'form-control'
+      .form-group
+        = f.label :email, class: 'control-label col-md-2'
+        .col-md-10
+          = f.email_field :email, class: 'form-control'
+      .form-group
+        = f.label :password, class: 'control-label col-md-2'
+        .col-md-10
+          = f.password_field :password, autocomplete: "off", class: 'form-control'
+      .form-group
+        = f.label :password_confirmation, class: 'control-label col-md-2'
+        .col-md-10
+          = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+      .form-group
+        = f.label :school, class: 'control-label col-md-2'
+        .col-md-10
+          = f.select :school, [['---', nil]] + User::SCHOOL.sort, {}, class: 'form-control'
+      .form-group
+        .col-md-10.col-md-offset-2
+          = f.submit "Add volunteer", class: 'btn btn-success'

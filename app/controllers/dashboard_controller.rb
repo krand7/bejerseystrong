@@ -6,4 +6,7 @@ class DashboardController < ApplicationController
     @conversations = current_user.conversations.current
   end
 
+  def profile
+  end
+
 end

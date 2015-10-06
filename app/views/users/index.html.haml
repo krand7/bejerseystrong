@@ -1,15 +1,20 @@
-%h1 Users
-%table.table.table-striped
-  %thead
-    %tr
-      %th #
-      %th First Name
-      %th Last Name
-      %th Email
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= user.id
-        %td= user.first_name if user.first_name.present?
-        %td= user.last_name if user.last_name.present?
-        %td= user.email
+.content-header
+  .container
+    %h1 Users
+
+.container
+  .content-container
+    %table.table.table-striped
+      %thead
+        %tr
+          %th #
+          %th First Name
+          %th Last Name
+          %th Email
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.id
+            %td= user.first_name if user.first_name.present?
+            %td= user.last_name if user.last_name.present?
+            %td= user.email

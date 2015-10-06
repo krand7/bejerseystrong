@@ -1,0 +1,5 @@
+.appointment-container
+  %h3= appointment.title
+  %h4.primary-red= appointment.formatted_date
+  %h5.primary-red= appointment.formatted_time
+  = simple_format appointment.formatted_address, class: 'small'

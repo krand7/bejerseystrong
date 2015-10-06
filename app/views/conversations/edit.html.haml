@@ -1,6 +1,12 @@
-%h1 Editing Conversation
+.content-header
+  .container
+    %h1 Editing Conversation
+    %p
+      = link_to 'Show', @conversation
+      %span.white
+        |
+      = link_to 'Back', conversations_path
 
-= render 'form'
-
-= link_to 'Show', @conversation
-= link_to 'Back', conversations_path
+.container
+  .content-container
+    = render 'form'

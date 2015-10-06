@@ -1,0 +1,15 @@
+.content-header
+  .container
+    %h1 Appointments near your Campus
+    %p= link_to 'Back to Dashboard', dashboard_path
+
+.container
+  .content-container
+    - @appointments.each do |appointment|
+      = render appointment
+      = link_to 'Edit', edit_appointment_path(appointment)
+      |
+      = link_to 'Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' }
+      %br
+      %br
+    = link_to 'New Appointment', new_appointment_path, class: 'btn btn-primary'

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   # Model relationships
   has_many :conversations
+  has_many :appointments
 
   def name
     if self.first_name.present? and self.last_name.present?
@@ -22,6 +23,10 @@ class User < ActiveRecord::Base
         return ''
       end
     end
+  end
+
+  def languages
+    [language_one, language_two, language_three].reject{ |l| l.nil? or l.empty? }.join(",")
   end
 
 end

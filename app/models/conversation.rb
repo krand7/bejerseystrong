@@ -1,6 +1,6 @@
 class Conversation < ActiveRecord::Base
 
-  STATUS = [['Registered', 'registered'], ['Contacted', 'contacted'], ['Pending', 'pending']]
+  STATUS = [['Pending', 'pending'], ['Contacted', 'contacted'], ['Enrolled', 'enrolled'], ['Passed', 'passed'], ['Denied', 'denied']]
 
   # Concerns
   include Deletable

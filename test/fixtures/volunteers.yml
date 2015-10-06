@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  first_name: MyString
-  last_name: MyString
-  zip_code: MyString
+  email: volunteer1@example.com
+  first_name: Volunteer
+  last_name: One
+  zip_code: 11111
 
 two:
-  email: MyString
-  first_name: MyString
-  last_name: MyString
-  zip_code: MyString
+  email: volunteer2@example.com
+  first_name: Volunteer
+  last_name: Two
+  zip_code: 11112

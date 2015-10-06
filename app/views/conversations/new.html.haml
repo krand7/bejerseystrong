@@ -1,5 +1,8 @@
-%h1 New Conversation
+.content-header
+  .container
+    %h1 New Conversation
+    %p= link_to 'Back to all conversations', conversations_path
 
-= render 'form'
-
-= link_to 'Back', conversations_path
+.container
+  .content-container
+    = render 'form'

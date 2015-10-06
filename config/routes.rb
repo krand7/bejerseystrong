@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :volunteers
+  resources :appointments
+  get 'my-appointments', to: 'appointments#my_appointments', as: 'my_appointments'
 
+  resources :volunteers
   resources :conversations
 
   scope module: 'static' do
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
     collection do
       get :new_volunteer
       post :create_volunteer
+      get 'my-volunteers', to: :my_volunteers
     end
   end
 
@@ -29,6 +32,7 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'dashboard#show'
+  get 'profile', to: 'dashboard#profile'
 
   root 'static#home'
 

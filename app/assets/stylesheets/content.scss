@@ -1,0 +1,38 @@
+.content-header {
+  padding: 5px 20px;
+  background-color: $primary-blue;
+  margin-bottom: 20px;
+  h1 {
+    color: rgb(255,255,255);
+    font-weight: 300;
+  }
+  p.lead {
+    margin-bottom: 0px;
+    color: rgb(255,255,255);
+  }
+  a {
+    color: rgba(255,255,255,0.8);
+  }
+}
+
+.content-container {
+  background-color: white;
+  box-shadow:0px 0px 5px rgba(0,0,0,.5);
+  margin-bottom: 20px;
+  padding: 20px;
+  .content-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #bbb;
+    background-color: #fafafa;
+  }
+}
+
+.content-container.inherit-background {
+  background: inherit;
+  box-shadow: none;
+}
+
+.horizontal-inset {
+  margin-left: 20px;
+  margin-right: 20px;
+}

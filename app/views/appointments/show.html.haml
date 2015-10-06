@@ -1,0 +1,17 @@
+.content-header
+  .container
+    %h1 Appointment
+    %p
+      = link_to 'Edit', edit_appointment_path(@appointment)
+      %span.white
+        |
+      = link_to 'Back', appointments_path
+.container
+  .content-container
+    = render @appointment
+
+%br
+- if @appointment.completed?
+  %h4 Complete
+  %p.lead= @appointment.results
+
