@@ -1,10 +1,12 @@
 .content-header
   .container
-    %h1 Your Conversations
+    %h1 Conversations
     %p= link_to 'Back to Dashboard', dashboard_path
 
 .container
   .content-container
+    %h2.primary-red Your Conversations
+    %br
     %table.table.table-striped
       %thead
         %tr
@@ -25,3 +27,36 @@
             %td= link_to 'Edit', edit_conversation_path(conversation)
             %td= link_to 'Delete', conversation_path(conversation), method: :delete, data: { confirm: 'Are you sure?' }
     = link_to 'New Conversation', new_conversation_path, class: 'btn btn-primary'
+
+- if current_user.campus_captain?
+  .container
+    .content-container
+      %h2.primary-red Campus Conversations
+      %br
+      %table.table.table-striped
+        %thead
+          %tr
+            %th First Name
+            %th Last Name
+            %th Email
+            %th Phone Number
+            %th Status
+            %th Volunteer
+        %tbody
+          - User.where(school: current_user.school).each do |volunteer|
+            - volunteer.conversations.current.each do |conversation|
+              %tr
+                %td= conversation.first_name if conversation.first_name.present?
+                %td= conversation.last_name if conversation.last_name.present?
+                %td= conversation.email if conversation.email.present?
+                %td= conversation.phone_number if conversation.phone_number.present?
+                %td= conversation.state if conversation.state.present?
+                %td= conversation.user.name
+            %tr.info
+              %td
+              %td
+              %td
+              %td
+              %td
+              %td
+      = link_to 'New Conversation', new_conversation_path, class: 'btn btn-primary'

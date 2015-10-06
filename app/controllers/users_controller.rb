@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :check_campus_captain!, only: [:new_volunteer, :create_volunteer]
-  before_action :check_admin!, only: [:index, :new, :show, :destroy]
+  before_action :check_campus_captain!, only: [:new_volunteer, :create_volunteer, :my_volunteers]
+  before_action :check_admin!, only: [:new, :show, :destroy]
   before_action :set_user, only: [:show, :destroy]
   respond_to :html
 
   def index
+    redirect_to my_volunteers_users_path and return unless current_user.admin?
     @users = User.all
   end
 

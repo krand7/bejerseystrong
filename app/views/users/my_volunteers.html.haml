@@ -24,5 +24,4 @@
             %td= volunteer.appointments.count
             %td= volunteer.sign_in_count
             %td= volunteer.created_at.strftime("%m/%d/%Y")
-            %td= link_to 'Edit', edit_volunteer_path(volunteer), class: 'btn btn-default btn-sm'
             %td= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'

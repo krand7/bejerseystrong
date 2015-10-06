@@ -7,7 +7,7 @@ class ConversationsController < ApplicationController
   # GET /conversations
   # GET /conversations.json
   def index
-    if current_user.leadership?
+    if current_user.admin?
       @conversations = Conversation.current
     else
       @conversations = current_user.conversations.current
