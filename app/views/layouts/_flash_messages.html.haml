@@ -1,0 +1,12 @@
+- if flash[:notice]
+  .flash-notice
+    .lead.centered
+      = flash[:notice].html_safe
+- if flash[:alert]
+  .flash-alert
+    .lead.centered
+      = flash[:alert].html_safe
+- if flash[:warning]
+  .flash-warning
+    .lead.centered
+      = flash[:warning].html_safe

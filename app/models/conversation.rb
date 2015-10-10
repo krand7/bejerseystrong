@@ -7,6 +7,7 @@ class Conversation < ActiveRecord::Base
 
   # Model relationships
   belongs_to :user
+  belongs_to :appointment
 
   def name
     if self.first_name.present? and self.last_name.present?

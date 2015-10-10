@@ -22,21 +22,35 @@
       %p.lead
         You've added
         = current_user.conversations.count
-        conversations so far.
+        conversations so far
+    .col-sm-3.col-xs-4
+      .dashboard-icon
+        = link_to new_appointment_path do
+          = image_tag 'img/icons/appointment.png', class: 'img-responsive'
+      %p.lead
+        Your campus has
+        = pluralize(Appointment.where(created_by_id: current_user.id).where("date > ?", Date.current).count, 'appointment')
+        coming up
+    .col-sm-3.col-xs-4
+      .dashboard-icon
+        - send_to = User.where(school: current_user.school, campus_captain: !current_user.campus_captain?).pluck(:email).join(',')
+        = link_to "mailto:#{send_to}" do
+          = image_tag 'img/icons/email.png', class: 'img-responsive'
+      %p.lead
+        Connect with your
+        = current_user.campus_captain? ? 'volunteers' : 'campus captain'
+    .col-sm-3.col-xs-4
+      .dashboard-icon
+        = link_to profile_path do
+          = image_tag 'img/icons/settings.png', class: 'img-responsive'
+      %p.lead
+        Profile
+  .row
     - if current_user.campus_captain?
-      .col-sm-3.col-xs-4
+      .col-sm-3
         .dashboard-icon
           = link_to new_volunteer_users_path do
             = image_tag 'img/icons/volunteer.png', class: 'img-responsive'
         %p.lead
           Your campus has registered
-          = succeed '.' do
-            = pluralize(User.where(school: current_user.school).count, 'volunteer')
-      .col-sm-3.col-xs-4
-        .dashboard-icon
-          = link_to new_appointment_path do
-            = image_tag 'img/icons/appointment.png', class: 'img-responsive'
-        %p.lead
-          Your campus has
-          = pluralize(Appointment.where(created_by_id: current_user.id).where("date > ?", Date.current).count, 'appointment')
-          coming up.
+          = pluralize(User.where(school: current_user.school).count, 'volunteer')

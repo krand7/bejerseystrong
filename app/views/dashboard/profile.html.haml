@@ -1,5 +1,7 @@
 .content-header
-  %h1 Your Profile
+  .container
+    %h1 Your Profile
+    %p= link_to 'Back to Dashboard', dashboard_path
 
 .container
   .content-container
@@ -13,29 +15,55 @@
             - current_user.errors.full_messages.each do |message|
               %li= message
       .form-group
-        = f.label :first_name, class: 'control-label col-md-2'
-        .col-md-10
+        = f.label :first_name, class: 'control-label col-md-3'
+        .col-md-6
           = f.text_field :first_name, class: 'form-control'
       .form-group
-        = f.label :last_name, class: 'control-label col-md-2'
-        .col-md-10
+        = f.label :last_name, class: 'control-label col-md-3'
+        .col-md-6
           = f.text_field :last_name, class: 'form-control'
       .form-group
-        = f.label :email, class: 'control-label col-md-2'
-        .col-md-10
+        = f.label :email, class: 'control-label col-md-3'
+        .col-md-6
           = f.text_field :email, class: 'form-control'
       .form-group
-        = f.label :language_one, class: 'control-label col-md-2'
-        .col-md-10
+        = f.label :language_one, class: 'control-label col-md-3'
+        .col-md-6
           = f.text_field :language_one, class: 'form-control'
       .form-group
-        = f.label :language_two, class: 'control-label col-md-2'
-        .col-md-10
+        = f.label :language_two, class: 'control-label col-md-3'
+        .col-md-6
           = f.text_field :language_two, class: 'form-control'
       .form-group
-        = f.label :language_three, class: 'control-label col-md-2'
-        .col-md-10
+        = f.label :language_three, class: 'control-label col-md-3'
+        .col-md-6
           = f.text_field :language_three, class: 'form-control'
       .form-group
-        .col-md-10.col-md-offset-2
+        = f.label :school, class: 'control-label col-md-3'
+        .col-md-6
+          = f.select :school, [['---', nil]] + User::SCHOOL.sort, {}, class: 'form-control'
+      .form-group
+        .col-md-6.col-md-offset-3
           = f.submit nil, class: 'btn btn-primary'
+
+  .content-container
+    = form_for current_user, url: change_password_path, html: { class: 'form-horizontal' } do |f|
+      .form-group
+        = f.label :current_password, class: 'col-sm-3 control-label'
+        .col-sm-6
+          = f.password_field :current_password, class: 'form-control', placeholder: 'Current password'
+          - if errors = current_user.errors[:current_password] and errors.present?
+            .bs-callout.bs-callout-danger
+              Please enter your
+              %strong current
+              password in order to set a new password.
+      .form-group
+        = f.label :password, class: 'col-sm-3 control-label'
+        .col-sm-6
+          = f.password_field :password, class: 'form-control', placeholder: "New password"
+          - if errors = current_user.errors[:password] and errors.present?
+            .bs-callout.bs-callout-danger
+              Please enter a new password that is at least 8 characters long.
+      .form-group
+        .col-md-6.col-md-offset-3
+          = f.submit 'Change Password', class: 'btn btn-primary'

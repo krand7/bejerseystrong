@@ -8,6 +8,10 @@
         - @conversation.errors.full_messages.each do |message|
           %li= message
   .form-group
+    = f.label :appointment_id, nil, class: 'control-label col-md-2'
+    .col-md-10
+      = f.select :appointment_id, Appointment.where(date: Date.current).pluck(:location, :id), {}, class: 'form-control'
+  .form-group
     = f.label :first_name, 'First name', class: 'control-label col-md-2'
     .col-md-10
       = f.text_field :first_name, class: 'form-control'

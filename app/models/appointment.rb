@@ -4,6 +4,7 @@ class Appointment < ActiveRecord::Base
   # Attribute related macros
   # Associations
   belongs_to :user
+  has_many :conversations
 
   # Validations
   validates :user_id, presence: true

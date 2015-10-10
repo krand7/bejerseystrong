@@ -6,7 +6,8 @@ class AppointmentsController < ApplicationController
   # GET /appointments.json
   def index
     redirect_to my_appointments_path and return unless current_user.campus_captain?
-    @appointments = Appointment.current.where(created_by_id: current_user.id).order(:date)
+    school_users = User.where(school: current_user.school).pluck(:id)
+    @appointments = Appointment.where(user_id: school_users).order(:date)
   end
 
   def my_appointments

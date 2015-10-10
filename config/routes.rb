@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#show'
   get 'profile', to: 'dashboard#profile'
+  patch 'change_password', to: 'dashboard#change_password', as: 'change_password'
 
   root 'static#home'
 

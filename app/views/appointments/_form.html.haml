@@ -1,6 +1,6 @@
 = form_for @appointment, html: { class: 'form-horizontal' } do |f|
   - if @appointment.errors.any?
-    #error_explanation
+    #error_explanation.bs-callout.bs-callout-danger
       %h2
         = pluralize(@appointment.errors.count, "error")
         prohibited this appointment from being saved:
@@ -10,19 +10,22 @@
   .form-group
     = f.label :date, nil, class: 'control-label col-md-2'
     .col-md-10
-      = f.date_field :date, class: 'form-control'
+      = f.date_field :date, placeholder: 'mm/dd/yyyy', class: 'form-control'
   .form-group
     = f.label :start_time, nil, class: 'control-label col-md-2'
     .col-md-10
-      = f.time_field :start_time, class: 'form-control'
+      = f.time_field :start_time, placeholder: 'hh:mm am/pm', class: 'form-control'
   .form-group
     = f.label :end_time, nil, class: 'control-label col-md-2'
     .col-md-10
-      = f.time_field :end_time, class: 'form-control'
-  .form-group
-    = f.label :user_id, 'Volunteer', class: 'control-label col-md-2'
-    .col-md-10
-      = f.select :user_id, User.where(school: current_user.school).collect{ |u| ["#{u.first_name} #{u.last_name} #{'(' + u.languages + ')' if u.languages.present?}", u.id]}, {}, class: 'form-control'
+      = f.time_field :end_time, placeholder: 'hh:mm am/pm', class: 'form-control'
+  - if current_user.campus_captain?
+    .form-group
+      = f.label :user_id, 'Volunteer', class: 'control-label col-md-2'
+      .col-md-10
+        = f.select :user_id, User.where(school: current_user.school).collect{ |u| ["#{u.first_name} #{u.last_name} #{'(' + u.languages + ')' if u.languages.present?}", u.id]}, {}, class: 'form-control'
+  - else
+    = f.hidden_field :user_id, value: current_user.id
   .form-group
     = f.label :location, nil, class: 'control-label col-md-2'
     .col-md-10
