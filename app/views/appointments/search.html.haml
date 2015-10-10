@@ -1,0 +1,14 @@
+.content-header
+  .container
+    %h1 Appointments
+
+.container
+  .content-container
+    = form_tag appointment_search_path, method: :get, class: 'form-inline' do
+      = label_tag 'Enter your zipcode: ', nil, class: 'control-label'
+      &nbsp;
+      = text_field_tag 'zipcode', params[:zipcode], class: 'form-control'
+      = submit_tag 'Search', class: 'btn btn-primary', name: nil
+    %br
+    %br
+    = render @appointments if @appointments.present?

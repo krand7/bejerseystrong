@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :appointments
   get 'my-appointments', to: 'appointments#my_appointments', as: 'my_appointments'
+  get 'appointment-search', to: 'appointments#search'
 
   resources :volunteers
   resources :conversations
