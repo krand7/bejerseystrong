@@ -38,10 +38,16 @@
         = f.label :language_three, class: 'control-label col-md-3'
         .col-md-6
           = f.text_field :language_three, class: 'form-control'
-      .form-group
-        = f.label :school, class: 'control-label col-md-3'
-        .col-md-6
-          = f.select :school, [['---', nil]] + User::SCHOOL.sort, {}, class: 'form-control'
+      - if current_user.admin?
+        .form-group
+          = f.label :school, class: 'control-label col-md-3'
+          .col-md-6
+            = f.select :school, [['---', nil]] + User::SCHOOL.sort, {}, class: 'form-control'
+      - else
+        .form-group
+          %label.control-label.col-md-3 School
+          .col-md-6
+            .form-control= current_user.school_name
       .form-group
         .col-md-6.col-md-offset-3
           = f.submit nil, class: 'btn btn-primary'

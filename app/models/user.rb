@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
     [language_one, language_two, language_three].reject{ |l| l.nil? or l.empty? }.join(",")
   end
 
+  def school_name
+    SCHOOL.detect{ |(_,s)| s==school }[0] rescue nil
+  end
+
 end
