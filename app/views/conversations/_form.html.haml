@@ -28,6 +28,18 @@
     .col-md-10
       = f.text_field :phone_number, class: 'form-control'
   .form-group
+    = f.label :address, 'Address', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :address, class: 'form-control'
+  .form-group
+    = f.label :city, 'City', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :city, class: 'form-control'
+  .form-group
+    = f.label :zip_code, 'Zip', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :zip_code, class: 'form-control'
+  .form-group
     = f.label :state, 'Status', class: 'control-label col-md-2'
     .col-md-10
       = f.select :state, Conversation::STATUS, {}, class: 'form-control'

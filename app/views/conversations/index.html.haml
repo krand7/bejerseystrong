@@ -1,11 +1,11 @@
 .content-header
   .container
-    %h1 Conversations
+    %h1 Connections
     %p= link_to 'Back to Dashboard', dashboard_path
 
 .container
   .content-container
-    %h2.primary-red Your Conversations
+    %h2.primary-red Your Connections
     %br
     %table.table.table-striped
       %thead
@@ -31,7 +31,7 @@
 - if current_user.campus_captain?
   .container
     .content-container
-      %h2.primary-red Campus Conversations
+      %h2.primary-red Campus Connections
       %br
       %table.table.table-striped
         %thead
