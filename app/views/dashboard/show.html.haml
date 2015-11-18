@@ -31,6 +31,13 @@
         Your campus has
         = pluralize(Appointment.where(created_by_id: current_user.id).where("date > ?", Date.current).count, 'appointment')
         coming up
+    - if current_user.appointments.incomplete.present?
+      .col-sm-3.col-xs-4
+        .dashboard-icon
+          = link_to incomplete_appointments_path do
+            = image_tag 'img/icons/appointment.png', class: 'img-responsive'
+        %p.lead
+          You have incomplete appointments!
     .col-sm-3.col-xs-4
       .dashboard-icon
         - send_to = User.where(school: current_user.school, campus_captain: !current_user.campus_captain?).pluck(:email).join(',')

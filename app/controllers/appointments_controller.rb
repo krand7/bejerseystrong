@@ -23,6 +23,10 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.order(:zipcode).where(zipcode: params[:zipcode])
   end
 
+  def incomplete
+    @appointments = current_user.appointments.incomplete
+  end
+
   # GET /appointments/new
   def new
     @appointment = Appointment.where(created_by_id: current_user.id).new
@@ -80,6 +84,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:date, :start_time, :end_time, :completed, :deleted, :user_id, :location, :address_line_one, :address_line_two, :zipcode, :city, :results)
+      params.require(:appointment).permit(:date, :start_time, :end_time, :completed, :deleted, :user_id, :location, :address_line_one, :address_line_two, :zipcode, :city, :results, :conversation_count, :contact_card_count, :referral_count, :followup_call_count)
     end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :appointments
   get 'my-appointments', to: 'appointments#my_appointments', as: 'my_appointments'
   get 'appointment-search', to: 'appointments#search'
+  get 'incomplete-appointments', to: 'appointments#incomplete'
 
   resources :volunteers
   resources :conversations
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     collection do
       get :new_volunteer
       post :create_volunteer
-      get 'my-volunteers', to: :my_volunteers
+      get 'my-volunteers', action: :my_volunteers
     end
   end
 

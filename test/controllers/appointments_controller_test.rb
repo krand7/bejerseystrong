@@ -19,6 +19,12 @@ class AppointmentsControllerTest < ActionController::TestCase
     assert_redirected_to :my_appointments
   end
 
+  test "should get incomplete appointments for volunteer" do
+    login(@user)
+    get :incomplete
+    assert_response :success
+  end
+
   test "should get new" do
     login(@user)
     get :new

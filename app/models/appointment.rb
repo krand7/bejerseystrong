@@ -22,6 +22,8 @@ class Appointment < ActiveRecord::Base
   include Deletable
 
   # Named scopes
+  scope :incomplete, -> { current.where("conversation_count IS NULL or contact_card_count IS NULL or referral_count IS NULL or followup_call_count IS NULL") }
+
   # Methods
   def title
     location + ' with ' + user.first_name
@@ -41,5 +43,9 @@ class Appointment < ActiveRecord::Base
 
   def street_address
     address_line_two.present? ? address_line_one + '<br />' + address_line_two : address_line_one
+  end
+
+  def complete?
+    conversation_count.present? && contact_card_count.present? && referral_count.present? && followup_call_count.present?
   end
 end

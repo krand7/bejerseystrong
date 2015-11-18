@@ -1,0 +1,12 @@
+.content-header
+  .container
+    %h1 Incomplete Appointments
+    %p= link_to 'Back to all appointments', appointments_path
+
+.container
+  - @appointments.each do |appointment|
+    .row
+      .col-sm-8
+        = render appointment
+      .col-sm-4
+        = link_to 'Add missing information', edit_appointment_path(appointment), class: 'btn btn-primary'

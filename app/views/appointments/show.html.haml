@@ -1,17 +1,22 @@
 .content-header
   .container
     %h1 Appointment
-    %p
+    %p.white
       = link_to 'Edit', edit_appointment_path(@appointment)
-      %span.white
-        |
+      |
       = link_to 'Back', appointments_path
 .container
-  .content-container
+  .col-md-8
     = render @appointment
-
-%br
-- if @appointment.completed?
-  %h4 Complete
-  %p.lead= @appointment.results
+  .col-md-4
+    - if @appointment.complete?
+      %h4 Complete
+      %ul
+        %li= pluralize(@appointment.conversation_count, 'conversation')
+        %li= pluralize(@appointment.contact_card_count, 'contact card')
+        %li= pluralize(@appointment.referral_count, 'referral')
+        %li= pluralize(@appointment.followup_call_count, 'follow-up call')
+      %p= @appointment.results
+    - else
+      %h4 Incomplete
 

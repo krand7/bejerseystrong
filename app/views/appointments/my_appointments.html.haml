@@ -3,6 +3,5 @@
     %h1 My Appointments
 
 .container
-  .content-container
-    - @appointments.each do |appointment|
-      = render appointment
+  - @appointments.each do |appointment|
+    = render appointment

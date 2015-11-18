@@ -46,11 +46,32 @@
     = f.label :city, nil, class: 'control-label col-md-2'
     .col-md-10
       = f.text_field :city, class: 'form-control'
-  - unless @appointment.new_record?
+  - if @appointment.new_record?
     .form-group
-      = f.label :results, nil, class: 'control-label col-md-2'
-      .col-md-10
+      .col-md-10.col-md-offset-2
+        = f.submit 'Create Appointment', class: 'btn btn-primary'
+  - else
+    %hr
+    .form-group
+      = f.label :conversation_count, 'How many conversations did you have?', class: 'control-label col-md-4'
+      .col-md-8
+        = f.number_field :conversation_count, class: 'form-control'
+    .form-group
+      = f.label :contact_card_count, 'How many contact cards did you collect?', class: 'control-label col-md-4'
+      .col-md-8
+        = f.number_field :contact_card_count, class: 'form-control'
+    .form-group
+      = f.label :referral_count, 'How many referrals did you give?', class: 'control-label col-md-4'
+      .col-md-8
+        = f.number_field :referral_count, class: 'form-control'
+    .form-group
+      = f.label :followup_call_count, 'How many follow-up calls have you made/will you make?', class: 'control-label col-md-4'
+      .col-md-8
+        = f.number_field :followup_call_count, class: 'form-control'
+    .form-group
+      = f.label :results, 'Please add any other notes about this appointment', class: 'control-label col-md-4'
+      .col-md-8
         = f.text_area :results, class: 'form-control'
-  .form-group
-    .col-md-10.col-md-offset-2
-      = f.submit "#{@appointment.new_record? ? 'Create' : 'Save'} Appointment", class: 'btn btn-primary'
+    .form-group
+      .col-md-8.col-md-offset-4
+        = f.submit 'Save Appointment', class: 'btn btn-primary'
