@@ -5,13 +5,13 @@
       = succeed '!' do
         = current_user.first_name.present? ? current_user.first_name : 'to your dashboard'
 
-- if current_user.languages.blank?
+- unless current_user.profile_complete?
   .dashboard-alert
     .container
       %h3
-        Looks like you haven't added your languages - please
-        = succeed '!' do
-          = link_to 'update your profile', profile_path
+        Looks like your profile is missing information - please
+        = link_to 'update your profile', profile_path
+        immediately!
 
 .container
   .row

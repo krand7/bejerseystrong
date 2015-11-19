@@ -27,6 +27,18 @@
         .col-md-6
           = f.text_field :email, class: 'form-control'
       .form-group
+        = f.label :phone, class: 'control-label col-md-3'
+        .col-md-6
+          = f.text_field :phone, class: 'form-control'
+      .form-group
+        = f.label :race, 'Race/Ethnicity', class: 'control-label col-md-3'
+        .col-md-6
+          = f.select :race, [['---', nil]] + User::RACE, {}, class: 'form-control'
+      .form-group
+        = f.label :familiar_communities, 'Communities You Know Well', class: 'control-label col-md-3'
+        .col-md-6
+          = f.text_area :familiar_communities, placeholder: "List all NJ communities that you're familiar with here (e.g. your hometown, a specific faith-based community)", rows: 4, class: 'form-control'
+      .form-group
         = f.label :language_one, class: 'control-label col-md-3'
         .col-md-6
           = f.text_field :language_one, class: 'form-control'
