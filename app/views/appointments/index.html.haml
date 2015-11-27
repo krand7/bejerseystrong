@@ -1,6 +1,6 @@
 .content-header
   .container
-    %h1 Appointments near your Campus
+    %h1 Shifts near your Campus
     %p= link_to 'Back to Dashboard', dashboard_path
 
 .container
@@ -12,4 +12,4 @@
       = link_to 'Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' }
       %br
       %br
-    = link_to 'New Appointment', new_appointment_path, class: 'btn btn-primary'
+    = link_to 'New Shift', new_appointment_path, class: 'btn btn-primary'
