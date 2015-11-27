@@ -61,3 +61,8 @@
         %p.lead
           Your campus has registered
           = pluralize(User.where(school: current_user.school).count, 'volunteer')
+    - if current_user.admin?
+      .col-sm-3
+        .dashboard-icon
+          = link_to schools_path do
+            = image_tag 'img/icons/volunteer.png', class: 'img-responsive'

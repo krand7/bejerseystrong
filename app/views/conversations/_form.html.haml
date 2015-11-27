@@ -42,7 +42,7 @@
   .form-group
     = f.label :state, 'Status', class: 'control-label col-md-2'
     .col-md-10
-      = f.select :state, Conversation::STATUS, {}, class: 'form-control'
+      = f.select :state, [['---', nil]] + Conversation::STATUS, {}, class: 'form-control'
   .form-group
     .col-md-10.col-md-offset-2
       = f.submit nil, class: 'btn btn-primary'

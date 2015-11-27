@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   # Model relationships
   has_many :conversations
   has_many :appointments
+  belongs_to :school
 
   def name
     if self.first_name.present? and self.last_name.present?

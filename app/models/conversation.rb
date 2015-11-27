@@ -1,5 +1,6 @@
 class Conversation < ActiveRecord::Base
-
+  # Default Scope
+  # Constants
   STATUS = [["Must Contact Consumer for Follow Up", "followup_needed"],
             ["Referred Consumer to NJ Family Care", "referred_njfc"],
             ["Referred Consumer to SHIP Counselor", "referred_ship"],
@@ -8,13 +9,26 @@ class Conversation < ActiveRecord::Base
             ["Confirmed Consumer's Insurance Needs Are Met", "confirmed_needs_met"],
             ["Do Not Contact Consumer Again", "do_not_contact"]]
 
-  # Concerns
-  include Deletable
-
-  # Model relationships
+  # Attribute related macros
+  # Associations
   belongs_to :user
   belongs_to :appointment
 
+  # Validations
+  validates :appointment_id, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :state, presence: true
+
+
+  # Callback
+  # Other macros
+  # Concerns
+  include Deletable
+
+  # Named scopes
+  # Methods
   def name
     if self.first_name.present? and self.last_name.present?
       return "#{self.first_name} #{self.last_name}"
@@ -27,6 +41,10 @@ class Conversation < ActiveRecord::Base
         return ''
       end
     end
+  end
+
+  def complete?
+    return false
   end
 
 end

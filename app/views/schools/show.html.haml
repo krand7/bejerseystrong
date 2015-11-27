@@ -1,0 +1,10 @@
+.content-header
+  .container
+    %h1= @school.name
+    %p.white
+      = link_to 'Edit', edit_school_path(@school)
+      |
+      = link_to 'Back', schools_path
+
+.container
+  = render @school

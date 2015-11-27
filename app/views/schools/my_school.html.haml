@@ -1,0 +1,13 @@
+.content-header
+  .container
+    %h1 My School
+    %p= link_to 'Back to Dashboard', dashboard_path
+
+.container
+  %p.lead
+    - if school = School.where(campus_captain_id: current_user).first
+      = school.name
+      has
+      = pluralize(school.users.count, 'volunteer')
+      registered.
+

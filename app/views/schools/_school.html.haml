@@ -1,0 +1,54 @@
+.content-container
+  %h2 Volunteers
+  %table.table.table-striped
+    %thead
+      %tr
+        %th #
+        %th First Name
+        %th Last Name
+        %th Email
+    %tbody
+      - school.users.each do |user|
+        %tr
+          %td= user.id
+          %td= user.first_name if user.first_name.present?
+          %td= user.last_name if user.last_name.present?
+          %td= user.email
+
+.content-container
+  %h2 Appointments
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Date
+        %th Volunteer
+        %th Location
+        %th Connections
+    %tbody
+      - Appointment.current.where(id: school.users.pluck(:id)).each do |appointment|
+        %tr
+          %td= appointment.date
+          %td= appointment.user.name
+          %td= appointment.location
+          %td= appointment.conversations.count
+
+.content-container
+  %h2 Connections
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Date
+        %th Volunteer
+        %th Shift
+        %th Name
+        %th Completed?
+        %th Status
+    %tbody
+      - Conversation.current.where(id: school.users.pluck(:id)).each do |conversation|
+        %tr
+          %td= conversation.created_at
+          %td= link_to conversation.appointment.location, conversation.appointment
+          %td= conversation.user.name
+          %td= conversation.name
+          %td= conversation.complete?
+          %td= conversation.state
