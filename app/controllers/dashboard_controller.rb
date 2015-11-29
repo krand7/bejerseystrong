@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-
+  before_action :check_admin!, only: [:aggregate_report]
   before_action :authenticate_user!
 
   def show
@@ -7,6 +7,9 @@ class DashboardController < ApplicationController
   end
 
   def profile
+  end
+
+  def aggregate_report
   end
 
   def change_password

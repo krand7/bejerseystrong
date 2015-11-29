@@ -1,0 +1,11 @@
+.content-header
+  .container
+    %h1 Aggregate Data
+
+.container
+  .row
+    .content-container
+      %h3 In the last week:
+      %p= pluralize User.where("last_sign_in_at > ?", Time.now.last_week).count, 'volunteer'
+      %p= pluralize Appointment.where("created_at > ?", Time.now.last_week).count, 'shift'
+      %p= pluralize Conversation.where("created_at > ?", Time.now.last_week).count, 'connection'

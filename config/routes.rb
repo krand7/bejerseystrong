@@ -41,6 +41,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#show'
   get 'profile', to: 'dashboard#profile'
+  get 'aggregate-report', to: 'dashboard#aggregate_report'
   patch 'change_password', to: 'dashboard#change_password', as: 'change_password'
 
   root 'static#home'
