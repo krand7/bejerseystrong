@@ -1,0 +1,11 @@
+.content-header
+  .container
+    %h1= @volunteer_resource.title
+    %p.white
+      = link_to 'Edit', edit_volunteer_resource_path(@volunteer_resource)
+      |
+      = link_to 'Back', volunteer_resources_path
+
+.container
+  = render @volunteer_resource
+

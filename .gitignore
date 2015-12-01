@@ -21,6 +21,10 @@
 /public/cache/*
 /public/stylesheets/cache/*
 /public/javascripts/cache/*
+/public/assets
+/public/public
+/public/uploads
+/test/support/uploads
 
 # CarrierWave
 /carrierwave/**/*

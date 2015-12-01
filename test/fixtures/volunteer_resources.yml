@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Resource One
+  description: This is the first resource
+
+two:
+  title: Resource Two
+  description: This is the second resource

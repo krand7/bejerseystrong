@@ -12,6 +12,16 @@
         Looks like your profile is missing information - please
         = link_to 'update your profile', profile_path
         immediately!
+  - if VolunteerResource.current.present?
+    %br
+
+- if VolunteerResource.current.present?
+  .dashboard-alert
+    .container
+      %h3
+        There are new
+        = link_to 'resources', resources_path
+        available!
 
 .container
   .row

@@ -1,0 +1,9 @@
+.content-header
+  .container
+    %h1 Resources
+    %p= link_to 'Back to dashboard', dashboard_path
+
+.container
+  - @resources.each do |resource|
+    = render resource
+    %hr

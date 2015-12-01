@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :volunteer_resources do
+    member do
+      get :file
+    end
+  end
+
+  get 'resources', to: 'dashboard#resources'
   resources :answers
   resources :questions
 

@@ -8,6 +8,7 @@ gem 'pg',                   '0.18.1'
 # Gems used by project
 ## gem 'kaminari',             '~> 0.16.3' # Pagination
 gem 'carrierwave',          '~> 0.10.0' # File uploads
+gem 'mini_magick'                                 # Image Resizing
 gem 'haml'
 gem 'figaro',               '~> 1.1.0'
 gem 'bootstrap-sass'

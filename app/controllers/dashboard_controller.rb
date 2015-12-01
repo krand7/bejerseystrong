@@ -12,6 +12,10 @@ class DashboardController < ApplicationController
   def aggregate_report
   end
 
+  def resources
+    @resources = VolunteerResource.current
+  end
+
   def change_password
     if current_user.update_with_password(user_password_params)
       sign_in current_user, bypass: true

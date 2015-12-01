@@ -1,0 +1,23 @@
+.content-header
+  .container
+    %h1 Volunteer Resources
+
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th File
+        %th Title
+        %th Description
+        %th{:colspan => "3"}
+    %tbody
+      - @volunteer_resources.each do |volunteer_resource|
+        %tr
+          %td= volunteer_resource.file
+          %td= volunteer_resource.title
+          %td= volunteer_resource.description
+          %td= link_to 'Show', volunteer_resource
+          %td= link_to 'Edit', edit_volunteer_resource_path(volunteer_resource)
+          %td= link_to 'Destroy', volunteer_resource, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = link_to 'New Volunteer resource', new_volunteer_resource_path
