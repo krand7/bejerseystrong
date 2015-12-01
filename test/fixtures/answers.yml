@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 0
+  content: Answer one
+  question: one
+  slug: question_one_0
+
+two:
+  value: 1
+  content: Answer two
+  question: one
+  slug: question_one_1

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :answers
+  resources :questions
+
   resources :schools do
     collection do
       get 'my-school', action: :my_school

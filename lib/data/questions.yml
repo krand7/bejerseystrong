@@ -1,0 +1,92 @@
+questions:
+- content: What is your gender?
+  slug: gender
+  display_type: radio
+  other_option: true
+- content: What city were you born in?
+  slug: city_of_birth
+  display_type: text
+- content: What country were you born in?
+  slug: country_of_birth
+  display_type: text
+- content: How many years have you been in the US?
+  slug: years_in_usa
+  display_type: number
+- content: What is your primary language?
+  slug: primary_language
+  display_type: text
+- content: Are you a US citizen?
+  slug: citizenship
+  display_type: bool
+- content: What is your race/ethnicity?
+  slug: race_ethnicity
+  display_type: checkbox
+  other_option: true
+- content: What is your combined annual household income?
+  slug: household_income
+  display_type: radio
+- content: What is your highest level of educational attainment?
+  slug: education_level
+  display_type: radio
+- content: What is your employment status?
+  slug: employment_status
+  display_type: radio
+- content: What is your marital status?
+  slug: marital_status
+  display_type: radio
+- content: Have you had any recent major life changes?
+  slug: recent_life_changes
+  display_type: checkbox
+- content: How many children do you have?
+  slug: number_of_children
+  display_type: number
+- content: What was the last time that you had health insurance?
+  slug: previous_insurance
+  display_type: radio
+- content: What are your reasons for being uninsured?
+  slug: uninsured_reasons
+  display_type: checkbox
+  other_option: true
+- content: How important is it for you to have health insurance?
+  slug: insurance_importance
+  display_type: radio
+- content: Have you ever looked at plans on the healthcare.gov website?
+  slug: healthcare_gov_knowledge
+  display_type: radio
+- content: Have you heard that individuals who do not enroll in a health insurance plan may have to pay a penalty or fine?
+  slug: penalty_knowledge
+  display_type: radio
+  other_option: true
+- content: Who would you say operates the health insurance marketplace also known as healthcare.gov?
+  slug: healthcare_gov_operation_knowledge
+  display_type: radio
+- content: Do you understand how tax credits that help purchase a plan through healthcare.gov work?
+  slug: tax_credits_knowledge
+  display_type: radio
+- content: In the past 12 months have you put off seeing a doctor or other healthcare provider for financial reasons?
+  slug: delayed_care_financially
+  display_type: bool
+- content: How confident are you that you could get regular check ups and manage the costs without health insurance?
+  slug: financial_confidence_checkups
+  display_type: radio
+- content: How confident are you that you could get a doctor visit when sick and manage the costs without health insurance?
+  slug: financial_confidence_doctor
+  display_type: radio
+- content: How confident are you that you could get emergency care and manage the costs without health insurance?
+  slug: financial_confidence_emergency
+  display_type: radio
+- content: How confident are you that you could get preventive testing or screening and manage the costs without health insurance?
+  slug: financial_confidence_preventative
+  display_type: radio
+- content: How confident are you that you could get prescription medication and manage the costs without health insurance?
+  slug: financial_confidence_prescriptions
+  display_type: radio
+- content: How confident are you that you will enroll in a health insurance plan in the next 6 months?
+  slug: confidence_enroll
+  display_type: radio
+- content: How did receiving assistance from Be Jersey Strong affect you?
+  slug: assistance_impact
+  display_type: radio
+- content: After considering everything what is the biggest reason you may still not enroll or wait to enroll in a health insurance plan?
+  slug: biggest_barrier
+  display_type: text

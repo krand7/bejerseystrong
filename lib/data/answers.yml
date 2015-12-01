@@ -1,0 +1,213 @@
+answers:
+- content: Male
+  question_slug: gender
+- content: Female
+  question_slug: gender
+- content: African American
+  question_slug: race_ethnicity
+- content: Asian
+  question_slug: race_ethnicity
+- content: Hispanic/Latino
+  question_slug: race_ethnicity
+- content: Native American
+  question_slug: race_ethnicity
+- content: White/Caucasian
+  question_slug: race_ethnicity
+- content: Less than $10,000
+  question_slug: household_income
+- content: $10,000-19,999
+  question_slug: household_income
+- content: $20,000-29,999
+  question_slug: household_income
+- content: $30,000-39,999
+  question_slug: household_income
+- content: $40,000-49,999
+  question_slug: household_income
+- content: $50,000-59,999
+  question_slug: household_income
+- content: $60,000-69,999
+  question_slug: household_income
+- content: $70,000 or more
+  question_slug: household_income
+- content: Less than high school
+  question_slug: education_level
+- content: High school graduate/GED
+  question_slug: education_level
+- content: Some college
+  question_slug: education_level
+- content: 2-year college graduate
+  question_slug: education_level
+- content: 4-year college graduate
+  question_slug: education_level
+- content: Master’s degree
+  question_slug: education_level
+- content: Doctoral degree
+  question_slug: education_level
+- content: Professional degree (e.g. JD, MD)
+  question_slug: education_level
+- content: Employed full-time
+  question_slug: employment_status
+- content: Employed part-time
+  question_slug: employment_status
+- content: Unemployed and seeking employment
+  question_slug: employment_status
+- content: Unemployed and not seeking employment
+  question_slug: employment_status
+- content: Student
+  question_slug: employment_status
+- content: Retired
+  question_slug: employment_status
+- content: On disability and cannot work
+  question_slug: employment_status
+- content: Homemaker/stay at home parent
+  question_slug: employment_status
+- content: Married
+  question_slug: marital_status
+- content: Unmarried and living with partner
+  question_slug: marital_status
+- content: Never married
+  question_slug: marital_status
+- content: Separated
+  question_slug: marital_status
+- content: Widowed
+  question_slug: marital_status
+- content: Divorced
+  question_slug: marital_status
+- content: Became unemployed
+  question_slug: recent_life_changes
+- content: Birth of child
+  question_slug: recent_life_changes
+- content: Changed jobs
+  question_slug: recent_life_changes
+- content: Death of loved one
+  question_slug: recent_life_changes
+- content: Moved
+  question_slug: recent_life_changes
+- content: Started a business
+  question_slug: recent_life_changes
+- content: Started school
+  question_slug: recent_life_changes
+- content: None of the above
+  question_slug: recent_life_changes
+- content: Less than a year ago
+  question_slug: previous_insurance
+- content: 1-2 years ago
+  question_slug: previous_insurance
+- content: 2-5 years ago
+  question_slug: previous_insurance
+- content: 5-10 years ago
+  question_slug: previous_insurance
+- content: More than 10 years ago
+  question_slug: previous_insurance
+- content: Never
+  question_slug: previous_insurance
+- content: Not eligible
+  question_slug: uninsured_reasons
+- content: Difficult to enroll because of complexity of the enrollment process
+  question_slug: uninsured_reasons
+- content: Difficult to enroll because of a language barrier
+  question_slug: uninsured_reasons
+- content: Could not afford or not sure could afford a plan
+  question_slug: uninsured_reasons
+- content: Could afford a plan but it did not seem worth it
+  question_slug: uninsured_reasons
+- content: Could afford a plan but didn’t like health reform law
+  question_slug: uninsured_reasons
+- content: Could afford plan but choose not to for another reason (specify)
+  question_slug: uninsured_reasons
+- content: Very important
+  question_slug: insurance_importance
+- content: Somewhat important
+  question_slug: insurance_importance
+- content: Not too important
+  question_slug: insurance_importance
+- content: Not at all important
+  question_slug: insurance_importance
+- content: 'Yes'
+  question_slug: healthcare_gov_knowledge
+- content: 'No'
+  question_slug: healthcare_gov_knowledge
+- content: Not sure
+  question_slug: healthcare_gov_knowledge
+- content: Never heard of this
+  question_slug: healthcare_gov_knowledge
+- content: 'Yes'
+  question_slug: penalty_knowledge
+- content: 'No'
+  question_slug: penalty_knowledge
+- content: Not sure
+  question_slug: penalty_knowledge
+- content: Federal government in Washington DC
+  question_slug: healthcare_gov_operation_knowledge
+- content: NJ state government
+  question_slug: healthcare_gov_operation_knowledge
+- content: Community organization
+  question_slug: healthcare_gov_operation_knowledge
+- content: Private organization
+  question_slug: healthcare_gov_operation_knowledge
+- content: Not sure
+  question_slug: healthcare_gov_operation_knowledge
+- content: I understand a lot
+  question_slug: tax_credits_knowledge
+- content: I understand some
+  question_slug: tax_credits_knowledge
+- content: I do not understand much
+  question_slug: tax_credits_knowledge
+- content: I understand nothing
+  question_slug: tax_credits_knowledge
+- content: I haven’t heard about this before
+  question_slug: tax_credits_knowledge
+- content: Very confident
+  question_slug: financial_confidence_checkups
+- content: Somewhat confident
+  question_slug: financial_confidence_checkups
+- content: Not too confident
+  question_slug: financial_confidence_checkups
+- content: Not at all confident
+  question_slug: financial_confidence_checkups
+- content: Very confident
+  question_slug: financial_confidence_doctor
+- content: Somewhat confident
+  question_slug: financial_confidence_doctor
+- content: Not too confident
+  question_slug: financial_confidence_doctor
+- content: Not at all confident
+  question_slug: financial_confidence_doctor
+- content: Very confident
+  question_slug: financial_confidence_emergency
+- content: Somewhat confident
+  question_slug: financial_confidence_emergency
+- content: Not too confident
+  question_slug: financial_confidence_emergency
+- content: Not at all confident
+  question_slug: financial_confidence_emergency
+- content: Very confident
+  question_slug: financial_confidence_preventative
+- content: Somewhat confident
+  question_slug: financial_confidence_preventative
+- content: Not too confident
+  question_slug: financial_confidence_preventative
+- content: Not at all confident
+  question_slug: financial_confidence_preventative
+- content: Very confident
+  question_slug: financial_confidence_prescriptions
+- content: Somewhat confident
+  question_slug: financial_confidence_prescriptions
+- content: Not too confident
+  question_slug: financial_confidence_prescriptions
+- content: Not at all confident
+  question_slug: financial_confidence_prescriptions
+- content: Very confident
+  question_slug: confidence_enroll
+- content: Somewhat confident
+  question_slug: confidence_enroll
+- content: Not too confident
+  question_slug: confidence_enroll
+- content: Not at all confident
+  question_slug: confidence_enroll
+- content: More likely to enroll
+  question_slug: assistance_impact
+- content: Less likely to enroll
+  question_slug: assistance_impact
+- content: Made little to no difference
+  question_slug: assistance_impact

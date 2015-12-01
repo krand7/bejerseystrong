@@ -1,0 +1,9 @@
+one:
+  content: Question One
+  display_type: radio
+  slug: question_one
+
+two:
+  content: Question Two
+  display_type: text
+  slug: question_two
