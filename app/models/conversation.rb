@@ -9,13 +9,17 @@ class Conversation < ActiveRecord::Base
             ["Confirmed Consumer's Insurance Needs Are Met", "confirmed_needs_met"],
             ["Do Not Contact Consumer Again", "do_not_contact"]]
 
+  COVERAGE = [["I do not currently have coverage", "none"],
+              ["I need to renew coverage", "renew"],
+              ["I am looking for better coverage", "better"],
+              ["I know someone who needs coverage", "referral"]]
+
   # Attribute related macros
   # Associations
   belongs_to :user
   belongs_to :appointment
 
   # Validations
-  validates :appointment_id, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true

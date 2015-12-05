@@ -44,5 +44,19 @@
     .col-md-10
       = f.select :state, [['---', nil]] + Conversation::STATUS, {}, class: 'form-control'
   .form-group
+    = f.label :current_coverage, 'Which applies most?', class: 'control-label col-md-2'
+    .col-md-10
+      = f.select :current_coverage, [['---', nil]] + Conversation::COVERAGE, {}, class: 'form-control'
+  .form-group
+    = f.label :notes, 'Additional Notes', class: 'control-label col-md-2'
+    .col-md-10
+      = f.text_area :notes, class: 'form-control'
+  .form-group
+    .col-md-10.col-md-offset-2
+      .checkbox
+        %label
+          = f.check_box :consented
+          By completing this form, you agree that your information above may be shared with Be Jersey Strong and its partners to assist you.
+  .form-group
     .col-md-10.col-md-offset-2
       = f.submit nil, class: 'btn btn-primary'
