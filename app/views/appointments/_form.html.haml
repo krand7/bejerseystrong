@@ -10,15 +10,21 @@
   .form-group
     = f.label :date, nil, class: 'control-label col-md-2'
     .col-md-10
-      = f.date_field :date, placeholder: 'mm/dd/yyyy', class: 'form-control'
+      = f.date_field :date, placeholder: 'yyyy-mm-dd', class: 'form-control'
+      Please enter as
+      %strong yyyy-mm-dd
   .form-group
     = f.label :start_time, nil, class: 'control-label col-md-2'
     .col-md-10
       = f.time_field :start_time, placeholder: 'hh:mm am/pm', class: 'form-control'
+      Please enter as
+      %strong hh:mm am/pm
   .form-group
     = f.label :end_time, nil, class: 'control-label col-md-2'
     .col-md-10
       = f.time_field :end_time, placeholder: 'hh:mm am/pm', class: 'form-control'
+      Please enter as
+      %strong hh:mm am/pm
   - if current_user.campus_captain?
     .form-group
       = f.label :user_id, 'Volunteer', class: 'control-label col-md-2'
