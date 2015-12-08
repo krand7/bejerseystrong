@@ -25,7 +25,7 @@
         %th Location
         %th Connections
     %tbody
-      - Appointment.current.where(id: school.users.pluck(:id)).each do |appointment|
+      - Appointment.current.where(user_id: school.users.pluck(:id)).each do |appointment|
         %tr
           %td= appointment.date
           %td= appointment.user.name
@@ -44,7 +44,7 @@
         %th Completed?
         %th Status
     %tbody
-      - Conversation.current.where(id: school.users.pluck(:id)).each do |conversation|
+      - Conversation.current.where(user_id: school.users.pluck(:id)).each do |conversation|
         %tr
           %td= conversation.created_at
           %td= link_to conversation.appointment.location, conversation.appointment
