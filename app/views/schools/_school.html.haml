@@ -27,8 +27,8 @@
     %tbody
       - Appointment.current.where(user_id: school.users.pluck(:id)).each do |appointment|
         %tr
-          %td= appointment.date
-          %td= appointment.user.name
+          %td= appointment.formatted_date
+          %td= link_to appointment.user.name, appointment.user
           %td= appointment.location
           %td= appointment.conversations.count
 
@@ -38,17 +38,17 @@
     %thead
       %tr
         %th Date
-        %th Volunteer
         %th Shift
+        %th Volunteer
         %th Name
         %th Completed?
         %th Status
     %tbody
       - Conversation.current.where(user_id: school.users.pluck(:id)).each do |conversation|
         %tr
-          %td= conversation.created_at
+          %td= conversation.created_at.strftime("%b %d, %Y")
           %td= conversation.appointment.present? ? link_to(conversation.appointment.location, conversation.appointment) : 'Unassigned'
-          %td= conversation.user.name
+          %td= link_to conversation.user.name, conversation.user
           %td= conversation.name
           %td= conversation.complete?
           %td= conversation.state
