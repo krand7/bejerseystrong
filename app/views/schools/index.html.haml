@@ -18,8 +18,8 @@
         %tr
           %td= school.name
           %td= school.users.count
-          %td= Appointment.current.where(id: school.users.pluck(:id)).count
-          %td= Conversation.current.where(id: school.users.pluck(:id)).count
+          %td= Appointment.current.where(user_id: school.users.pluck(:id)).count
+          %td= Conversation.current.where(user_id: school.users.pluck(:id)).count
           %td= link_to 'Show', school
           %td= link_to 'Edit', edit_school_path(school)
           %td= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' }

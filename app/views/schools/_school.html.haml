@@ -47,7 +47,7 @@
       - Conversation.current.where(user_id: school.users.pluck(:id)).each do |conversation|
         %tr
           %td= conversation.created_at
-          %td= link_to conversation.appointment.location, conversation.appointment
+          %td= conversation.appointment.present? ? link_to(conversation.appointment.location, conversation.appointment) : 'Unassigned'
           %td= conversation.user.name
           %td= conversation.name
           %td= conversation.complete?
