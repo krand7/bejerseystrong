@@ -75,6 +75,10 @@
       .col-md-8
         = f.number_field :followup_call_count, class: 'form-control'
     .form-group
+      = f.label :confirmed_enrollment_count, 'How many enrollments did you confirm?', class: 'control-label col-md-4'
+      .col-md-8
+        = f.number_field :confirmed_enrollment_count, class: 'form-control'
+    .form-group
       = f.label :results, 'Please add any other notes about this shift', class: 'control-label col-md-4'
       .col-md-8
         = f.text_area :results, class: 'form-control'

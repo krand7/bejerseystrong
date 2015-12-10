@@ -46,6 +46,6 @@ class Appointment < ActiveRecord::Base
   end
 
   def complete?
-    conversation_count.present? && contact_card_count.present? && referral_count.present? && followup_call_count.present?
+    conversation_count.present? && contact_card_count.present? && referral_count.present? && followup_call_count.present? && confirmed_enrollment_count.present?
   end
 end
