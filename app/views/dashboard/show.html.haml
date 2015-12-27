@@ -12,8 +12,6 @@
         Looks like your profile is missing information - please
         = link_to 'update your profile', profile_path
         immediately!
-  - if VolunteerResource.current.present?
-    %br
 
 - if VolunteerResource.current.present?
   .dashboard-alert
@@ -22,6 +20,14 @@
         There are new
         = link_to 'resources', resources_path
         available!
+
+- if current_user.campus_captain? and User.where(approved: false, school_id: current_user.school_id).present?
+  .dashboard-alert
+    .container
+      %h3
+        There are new
+        = link_to 'campus volunteers', pending_volunteers_users_path
+        waiting for your approval!
 
 .container
   .row

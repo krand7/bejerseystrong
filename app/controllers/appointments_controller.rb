@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :search]
+  before_action :check_user!, except: [:show, :search]
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments

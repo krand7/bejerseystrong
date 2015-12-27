@@ -1,33 +1,35 @@
-- @volunteer = Volunteer.new
 #volunteer-signup.col-sm-8.col-sm-offset-2
   %h1.f700.centered
     Are you in?
   %p.lead.centered.f300
     We're now recruiting volunteers who are interested in helping others gain access to health care. We're looking for friendly, energetic, compassionate students to join our cause. Are you one of them?
   #volunteer-signup-form
-    = form_for @volunteer, remote: true do |f|
-      #error_explanation
-        - if @volunteer.errors.any?
-          %h2
-            = pluralize(@volunteer.errors.count, "error")
-            prohibited this volunteer from being saved:
-          %ul
-            - @volunteer.errors.full_messages.each do |message|
-              %li= message
-      .form-group{ style: 'margin-right: 15px'}
-        = f.label :first_name, 'First Name', class: 'control-label'
-        = f.text_field :first_name, class: 'form-control'
-      .form-group{ style: 'margin-right: 15px'}
-        = f.label :last_name, 'Last Name', class: 'control-label'
-        = f.text_field :last_name, class: 'form-control'
-      .form-group{ style: 'margin-right: 15px'}
-        = f.label :email, 'Email', class: 'control-label'
-        = f.text_field :email, class: 'form-control'
-      .form-group{ style: 'margin-right: 15px'}
-        = f.label :zip_code, 'Zip Code', class: 'control-label'
-        = f.text_field :zip_code, class: 'form-control'
-      .form-group.centered{ style: 'margin-right: 15px'}
-        = f.submit 'I want to learn more!', class: 'btn btn-primary', id: 'subscribe'
+    = render 'devise/registrations/form', resource: User.new
+
+-#    @volunteer = Volunteer.new
+-#    = form_for @volunteer, remote: true do |f|
+-#      #error_explanation
+-#        - if @volunteer.errors.any?
+-#          %h2
+-#            = pluralize(@volunteer.errors.count, "error")
+-#            prohibited this volunteer from being saved:
+-#          %ul
+-#            - @volunteer.errors.full_messages.each do |message|
+-#              %li= message
+-#      .form-group{ style: 'margin-right: 15px'}
+-#        = f.label :first_name, 'First Name', class: 'control-label'
+-#        = f.text_field :first_name, class: 'form-control'
+-#      .form-group{ style: 'margin-right: 15px'}
+-#        = f.label :last_name, 'Last Name', class: 'control-label'
+-#        = f.text_field :last_name, class: 'form-control'
+-#      .form-group{ style: 'margin-right: 15px'}
+-#        = f.label :email, 'Email', class: 'control-label'
+-#        = f.text_field :email, class: 'form-control'
+-#      .form-group{ style: 'margin-right: 15px'}
+-#        = f.label :zip_code, 'Zip Code', class: 'control-label'
+-#        = f.text_field :zip_code, class: 'form-control'
+-#      .form-group.centered{ style: 'margin-right: 15px'}
+-#        = f.submit 'I want to learn more!', class: 'btn btn-primary', id: 'subscribe'
 
 
 -# = render partial: 'mailchimp_signup_form'

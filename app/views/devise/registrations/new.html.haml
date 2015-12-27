@@ -1,21 +1,9 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @validatable
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+#slide5.row.reset-layout
+  #volunteer-signup.col-sm-8.col-sm-offset-2
+    %h1.f700.centered
+      Are you in?
+    %p.lead.centered.f300
+      We're now recruiting volunteers who are interested in helping others gain access to health care. We're looking for friendly, energetic, compassionate students to join our cause. Are you one of them?
+    #volunteer-signup-form
+      - resource = User.new
+      = render 'devise/registrations/form', resource: resource

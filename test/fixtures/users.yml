@@ -8,15 +8,18 @@ regular:
   first_name: Regular
   last_name: Volunteer
   email: regular@example.com
+  approved: true
 
 admin:
   first_name: Admin
   last_name: Volunteer
   email: admin@example.com
   admin: true
+  approved: true
 
 captain:
   first_name: Campus
   last_name: Captain
   email: captain@example.com
   campus_captain: true
+  approved: true

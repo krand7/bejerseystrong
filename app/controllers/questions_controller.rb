@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_user!
   before_action :check_admin!
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 

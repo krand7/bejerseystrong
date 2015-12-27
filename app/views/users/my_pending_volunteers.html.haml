@@ -1,0 +1,29 @@
+.content-header
+  .container
+    %h1 Pending Campus Volunteers
+    %p= link_to 'Back to Dashboard', dashboard_path
+
+.container
+  .content-container
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Name
+          %th Email
+          %th Connections
+          %th Shifts
+          %th Sessions
+          %th Created
+          %th{:colspan => "2"}
+      %tbody
+        - @volunteers.each do |volunteer|
+          %tr
+            %td= volunteer.name
+            %td= volunteer.email
+            %td= volunteer.conversations.count
+            %td= volunteer.appointments.count
+            %td= volunteer.sign_in_count
+            %td= volunteer.created_at.strftime("%m/%d/%Y")
+            %td= link_to 'Approve', user_path(volunteer, user: { approved: true }), method: :patch, class: 'btn btn-success btn-sm'
+            %td= link_to 'Deny', volunteer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+    = link_to 'Add a volunteer', new_volunteer_users_path, class: 'btn btn-primary'

@@ -1,5 +1,6 @@
 class VolunteerResourcesController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_user!
   before_action :check_admin!, except: [:file]
   before_action :set_volunteer_resource, only: [:show, :edit, :update, :destroy, :file]
 

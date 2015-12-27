@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :check_user!
   before_action :check_campus_captain!, only: [:new_volunteer, :create_volunteer, :my_volunteers]
-  before_action :check_admin!, only: [:new, :show, :destroy]
-  before_action :set_user, only: [:show, :destroy]
+  before_action :check_admin!, only: [:new, :show]
+  before_action :check_admin_or_captain!, only: [:destroy]
+  before_action :set_user, only: [:show, :destroy, :update]
   respond_to :html
 
   def index
@@ -33,9 +35,15 @@ class UsersController < ApplicationController
     @volunteers = User.where(school: current_user.school)
   end
 
+  def my_pending_volunteers
+    @volunteers = User.where(school: current_user.school, approved: false)
+  end
+
   def update
     respond_to do |format|
-      if current_user.update(user_params)
+      if @user && @user.update(user_params)
+        format.html { redirect_to :back, notice: 'User successfully saved!' }
+      elsif current_user.update(user_params)
         format.html { redirect_to profile_path, notice: 'Profile successfully saved!' }
       else
         format.html { render profile_path }
@@ -44,6 +52,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # redirect_to :back
   end
 
   def destroy
@@ -57,7 +66,8 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
-                                  :school_id, :phone, :race, :familiar_communities, :language_one, :language_two, :language_three)
+                                  :school_id, :graduation_year, :navigator_interest, :approved,
+                                  :phone, :race, :familiar_communities, :language_one, :language_two, :language_three)
   end
 
   def set_user

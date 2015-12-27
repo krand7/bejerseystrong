@@ -2,7 +2,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
-before_action :check_admin!
+# before_action :check_admin!
 
   # GET /resource/sign_up
   # def new
@@ -38,22 +38,31 @@ before_action :check_admin!
   #   super
   # end
 
-  # protected
+  protected
 
   # You can put the params you want to permit in the empty array.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def sign_up_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
+                                  :school_id, :graduation_year, :navigator_interest, :approved,
+                                  :phone, :race, :familiar_communities, :language_one, :language_two, :language_three)
+  end
 
   # You can put the params you want to permit in the empty array.
-  # def configure_account_update_params
   #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+  def account_update_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
+                                  :school_id, :graduation_year, :navigator_interest, :approved,
+                                  :phone, :race, :familiar_communities, :language_one, :language_two, :language_three)
+  end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    if resource.approved?
+      dashboard_path
+    else
+      pending_path
+    end
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

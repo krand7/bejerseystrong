@@ -1,6 +1,10 @@
 class DashboardController < ApplicationController
   before_action :check_admin!, only: [:aggregate_report]
+  before_action :check_user!, except: :pending
   before_action :authenticate_user!
+
+  def pending
+  end
 
   def show
     @conversations = current_user.conversations.current

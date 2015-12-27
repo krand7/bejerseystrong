@@ -45,5 +45,4 @@ class User < ActiveRecord::Base
   def profile_complete?
     phone.present? && race.present? && familiar_communities.present? && languages.present?
   end
-
 end

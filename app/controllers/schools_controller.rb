@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_user!
   before_action :check_admin!, except: [:my_school]
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 

@@ -40,6 +40,7 @@ Rails.application.routes.draw do
       get :new_volunteer
       post :create_volunteer
       get 'my-volunteers', action: :my_volunteers
+      get 'pending-volunteers', action: :my_pending_volunteers
     end
   end
 
@@ -50,6 +51,7 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'dashboard#show'
+  get 'pending', to: 'dashboard#pending'
   get 'profile', to: 'dashboard#profile'
   get 'aggregate-report', to: 'dashboard#aggregate_report'
   patch 'change_password', to: 'dashboard#change_password', as: 'change_password'

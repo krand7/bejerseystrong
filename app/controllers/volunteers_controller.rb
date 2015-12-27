@@ -1,6 +1,6 @@
 class VolunteersController < ApplicationController
-
   before_action :authenticate_user!, except: [:new, :create]
+  before_action :check_user!, except: [:new, :create]
   before_action :check_admin!, except: [:new, :create]
   before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
 
